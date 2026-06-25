@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { coursesData } from '../data/coursesData';
 import { useMagneticEffect } from '../hooks/useMagneticEffect';
 import { AnimatedHeroGraphic } from './AnimatedHeroGraphic';
+import { SuccessStories } from './SuccessStories';
 
 const posterImages: Record<string, string> = {
   apids: '/courses-poster/APIDS.jpeg',
@@ -56,7 +57,17 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         <div className="course-hero-overlay"></div>
         <div className="course-hero-content container hero-split">
           <div className="hero-left">
-            <h1 className="course-hero-title">{course.title}</h1>
+            <h1 className="course-hero-title">
+              {course.title.includes(' & ') ? (
+                <>
+                  {course.title.substring(0, course.title.indexOf(' & '))}
+                  <br />
+                  & {course.title.substring(course.title.indexOf(' & ') + 3)}
+                </>
+              ) : (
+                course.title
+              )}
+            </h1>
             <p className="course-hero-tagline">{course.tagline}</p>
 
             <div className="hero-cta-group">
@@ -173,10 +184,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
 
       {/* 4. Interactive Syllabus Accordion */}
       <section className="course-syllabus-section container reveal-on-scroll">
-        <div className="syllabus-header text-center">
-          <span className="section-subtitle">CURRICULUM SPECIFICATIONS</span>
-          <h2 className="section-title">DETAILED LEARNING MODULES</h2>
-          <div className="title-underline center"></div>
+        <div className="course-syllabus-banner">
+          <div className="section-title-wrapper">
+            <h2 className="section-title-divider course-syllabus-banner-title">Program Modules</h2>
+          </div>
         </div>
 
         <div className="syllabus-accordion">
@@ -350,7 +361,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         </section>
       )}
 
-      {/* 10. Bottom CTA Section */}
+      {/* 10. Success Stories */}
+      <SuccessStories />
+
+      {/* 11. Bottom CTA Section */}
       <section className="course-bottom-cta reveal-on-scroll">
         <div className="cta-box container text-center">
           <h2>Ready to Launch Your Career in {course.id.toUpperCase()}?</h2>

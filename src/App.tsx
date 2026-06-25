@@ -108,15 +108,15 @@ function App() {
         <section className="content-section">
           <div className="hero-split">
             <div className="hero-left">
-              <span className="hero-heading-become">BECOME AN</span>
-              <h1 className="hero-heading-pro">IT PROFESSIONAL</h1>
+              <span className="hero-heading-become">Become an</span>
+              <h1 className="hero-heading-pro">IT Professional</h1>
               <h2 className="hero-heading-accent">
-                WITH DATA SCIENCE,<br />
-                AI & CYBERSECURITY
+                With Data Science,<br />
+                AI & Cybersecurity
               </h2>
               
               <p className="hero-desc">
-                Get your employment with industry ready skills today.
+                GET YOUR EMPLOYMENT WITH INDUSTRY READY SKILLS TODAY.
               </p>
             </div>
 
@@ -125,6 +125,10 @@ function App() {
                 <AnimatedHeroGraphic />
               </div>
             </div>
+          </div>
+
+          <div className="badges-header">
+            <h2 className="badges-title">Learners Benefit</h2>
           </div>
 
           <div className="hero-badges-grid">

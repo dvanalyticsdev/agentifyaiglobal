@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
                   setDropdownOpen(!dropdownOpen);
                 }}
               >
-                All courses
+                All Courses
                 <svg className={`chevron-icon ${dropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
                   <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

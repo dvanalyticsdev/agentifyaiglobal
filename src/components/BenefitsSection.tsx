@@ -568,7 +568,7 @@ export const BenefitsSection: React.FC = () => {
         <div className="benefits-header reveal-on-scroll">
           <span className="benefits-subtitle">MAXIMIZE YOUR SUCCESS</span>
           <h2 className="benefits-title">
-            {activeTab === 'program' ? 'PROGRAM BENEFITS' : 'LMS PLATFORM BENEFITS'}
+            {activeTab === 'program' ? 'Program Benefits' : 'LMS Platform Benefits'}
           </h2>
           
           {/* Decorative Divider */}

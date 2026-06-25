@@ -1,37 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const slideshowImages = [
-  '/hero-stories/hero-section-first-image.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.40 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.40 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.40 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.41 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.41 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.41 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.42 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.42 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.42 PM (3).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.42 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.43 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.43 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.43 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.44 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.44 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.44 PM (3).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.44 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.45 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.45 PM (2).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.45 PM.jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.46 PM (1).jpeg',
-  '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.46 PM.jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.12 PM (1).jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.12 PM.jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.13 PM.jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.14 PM.jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.15 PM.jpeg',
+  '/hero-stories/WhatsApp Image 2026-06-25 at 3.35.16 PM.jpeg',
 ];
 
-const SLIDE_DURATION = 3500; // 3.5 seconds per slide
+const SLIDE_DURATION = 2000; // 2.0 seconds per slide (speeded up)
+
+// Helper function to shuffle an array
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 export const AnimatedHeroGraphic: React.FC = () => {
+  const [images] = useState(() => shuffleArray(slideshowImages));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const touchStartX = useRef<number | null>(null);
@@ -40,18 +31,18 @@ export const AnimatedHeroGraphic: React.FC = () => {
     if (!isPlaying) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, SLIDE_DURATION);
 
     return () => clearInterval(timer);
-  }, [isPlaying]);
+  }, [isPlaying, images.length]);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + slideshowImages.length) % slideshowImages.length);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % slideshowImages.length);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -81,7 +72,7 @@ export const AnimatedHeroGraphic: React.FC = () => {
     >
       {/* Slideshow Content */}
       <div className="slideshow-slides-viewport">
-        {slideshowImages.map((image, index) => {
+        {images.map((image, index) => {
           const isActive = index === currentIndex;
           return (
             <div 

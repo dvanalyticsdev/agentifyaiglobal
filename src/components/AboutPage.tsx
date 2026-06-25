@@ -158,12 +158,8 @@ export const AboutPage: React.FC = () => {
       {/* 5. Collaboration Section */}
       <section className="about-collab-section container reveal-on-scroll">
         <div className="about-collab-wrapper">
-          <div className="about-collab-logo-panel">
-            <img src="/Transparent-logo.png" alt="Agentify AI Logo" className="about-collab-logo" />
-          </div>
-          <div className="about-collab-x">✕</div>
-          <div className="about-collab-logo-panel">
-            <img src="/DV-Logo.png" alt="DV Logo" className="about-collab-logo" />
+          <div className="about-collab-logo-panel single-panel">
+            <img src="/collab-logo.jpg" alt="Agentify AI & DV Analytics Collaboration" className="about-collab-logo" />
           </div>
         </div>
       </section>

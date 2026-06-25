@@ -363,7 +363,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onViewDetails 
     <section className="programs-section" id="courses">
       <div className="programs-section-header reveal-on-scroll">
         <div className="section-title-wrapper">
-          <h2 className="section-title-divider">OUR TRAINING PROGRAM</h2>
+          <h2 className="section-title-divider">Our Training Program</h2>
         </div>
       </div>
 
@@ -426,8 +426,6 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, onViewDetails, index
         className={`program-card glow-card ${program.theme}`}
         style={{ '--glow-color': glowColors[program.theme] } as React.CSSProperties}
       >
-        <div className="card-top-accent"></div>
-
         <div className="program-poster-container">
           <img 
             src={posterImages[program.id]} 
@@ -436,15 +434,6 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program, onViewDetails, index
             loading="lazy"
           />
         </div>
-
-        <ul className="program-bullets">
-          {program.bulletPoints.map((bullet, i) => (
-            <li key={i} className="bullet-item">
-              <span className="bullet-dot"></span>
-              <span className="bullet-text">{bullet}</span>
-            </li>
-          ))}
-        </ul>
 
         <button 
           className="view-details-btn" 
