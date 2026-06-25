@@ -5811,6 +5811,7 @@ a {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.85rem;
+  width: min(360px, calc(100vw - 24px));
 }
 
 .chatbot-launcher {
@@ -6185,6 +6186,7 @@ a {
   .chatbot-shell {
     right: 14px;
     bottom: 14px;
+    width: calc(100vw - 20px);
   }
 
   .chatbot-overlay {
@@ -6469,10 +6471,14 @@ a {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(6, 182, 212, 0.25);
   border-radius: 20px;
-  padding: 0.9rem 1.2rem;
+  padding: 1rem 1.2rem 0.95rem;
   box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.robot-speech-bubble.fixed-welcome {
+  padding-right: 2.9rem;
 }
 
 .robot-speech-bubble:hover {
@@ -6632,6 +6638,8 @@ a {
   pointer-events: auto;
   cursor: grab;
   touch-action: none; /* Prevent scroll on touch while dragging */
+  overflow: visible;
+  align-self: flex-end;
 }
 
 .robot-widget-container:active {
@@ -6640,23 +6648,23 @@ a {
 
 .robot-widget-container .robot-bubble-container {
   position: absolute;
-  bottom: 20px;
-  right: 135px;
-  left: auto;
-  transform: none;
-  width: max-content;
-  max-width: 250px;
+  bottom: 142px;
+  left: calc(50% - 16px);
+  right: auto;
+  transform: translateX(-50%);
+  width: min(250px, calc(100vw - 40px));
+  max-width: min(250px, calc(100vw - 40px));
   top: auto;
 }
 
 .robot-widget-container .bubble-arrow {
-  bottom: 27px;
-  right: -8px;
-  left: auto;
-  transform: rotate(45deg);
-  border-top: 1px solid rgba(6, 182, 212, 0.25);
+  bottom: -8px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) rotate(45deg);
   border-right: 1px solid rgba(6, 182, 212, 0.25);
-  border-bottom: none;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.25);
+  border-top: none;
   border-left: none;
 }
 
@@ -6664,15 +6672,16 @@ a {
   .robot-widget-container {
     width: 110px;
     height: 110px;
-    margin-right: 36px;
+    margin-right: 12px;
   }
   
   .robot-widget-container .robot-bubble-container {
-    bottom: 112px;
+    bottom: 118px;
+    left: calc(50% - 12px);
     right: auto;
-    left: 50%;
     transform: translateX(-50%);
-    max-width: 220px;
+    width: min(200px, calc(100vw - 28px));
+    max-width: min(200px, calc(100vw - 28px));
   }
   
   .robot-widget-container .bubble-arrow {
@@ -6687,7 +6696,7 @@ a {
   }
 }
 
-/* === Minimize Button (absolute position inside widget container) === */
+/* === Minimize Button === */
 .chatbot-minimize-btn {
   position: absolute;
   top: -8px;
@@ -6709,6 +6718,11 @@ a {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 0;
   opacity: 0.9;
+}
+
+.chatbot-minimize-btn.bubble-attached {
+  top: 12px;
+  right: 12px;
 }
 
 .chatbot-minimize-btn:hover {
