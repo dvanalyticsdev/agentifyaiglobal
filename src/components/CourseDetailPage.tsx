@@ -316,7 +316,12 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         <div className="outcome-checklist-grid">
           {course.programOutcome.map((outcome, idx) => (
             <div key={idx} className="outcome-checklist-item">
-              <span className="outcome-check-icon">✅</span>
+              <span className="outcome-check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="outcome-check-icon-svg">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M10 8l4 4-4 4" />
+                </svg>
+              </span>
               <span className="outcome-check-text">{outcome}</span>
             </div>
           ))}
