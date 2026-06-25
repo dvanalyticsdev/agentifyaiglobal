@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-section="footer">
       <div className="footer-container">
         
         {/* Section Header matching site theme */}

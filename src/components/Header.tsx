@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
   };
 
   return (
-    <header className="site-header">
+    <header className="site-header" data-section="header">
       <div className="header-container">
         <a href="/" className="logo-link" onClick={(e) => {
           e.preventDefault();

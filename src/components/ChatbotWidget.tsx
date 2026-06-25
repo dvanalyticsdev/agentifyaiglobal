@@ -17,6 +17,7 @@ interface ChatbotWidgetProps {
   robotClicked: boolean;
   onRobotClick: () => void;
   blinkTrigger: number;
+  hoveredSection: string | null;
 }
 
 const initialAssistantMessage =
@@ -28,6 +29,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
   robotClicked,
   onRobotClick,
   blinkTrigger,
+  hoveredSection,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const widgetRef = useRef<HTMLDivElement>(null);
@@ -310,6 +312,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
               pose={robotPose} 
               isClicked={robotClicked} 
               onClick={() => setIsOpen(true)}
+              hoveredSection={hoveredSection}
             />
             <RobotCanvas 
               pose={robotPose} 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Header } from './components/Header';
 import { AnimatedHeroGraphic } from './components/AnimatedHeroGraphic';
 import { ProgramsSection } from './components/ProgramsSection';
@@ -20,6 +20,26 @@ function App() {
   const scrollRevealRef = useScrollReveal(activePage);
   const [robotPose, setRobotPose] = useState<'idle' | 'wave' | 'programs' | 'benefits' | 'roadmap' | 'footer'>('idle');
   const [robotClicked, setRobotClicked] = useState(false);
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+
+  // Global mousemove-based section detection
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    const elements = document.elementsFromPoint(e.clientX, e.clientY);
+    let foundSection: string | null = null;
+    for (const el of elements) {
+      const section = (el as HTMLElement).dataset?.section;
+      if (section) {
+        foundSection = section;
+        break;
+      }
+    }
+    setHoveredSection(foundSection);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [handleMouseMove]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -84,11 +104,13 @@ function App() {
     if (activePage.startsWith('course-')) {
       const courseId = activePage.replace('course-', '');
       return (
-        <CourseDetailPage 
-          courseId={courseId} 
-          onBackHome={() => setActivePage('home')} 
-          onEnroll={() => setActivePage(`enroll-${courseId}`)} 
-        />
+        <div data-section="course-detail">
+          <CourseDetailPage 
+            courseId={courseId} 
+            onBackHome={() => setActivePage('home')} 
+            onEnroll={() => setActivePage(`enroll-${courseId}`)} 
+          />
+        </div>
       );
     }
 
@@ -96,26 +118,30 @@ function App() {
       const courseId = activePage.replace('enroll-', '');
       const defaultCourseId = courseId !== 'enroll' ? courseId : undefined;
       return (
-        <EnrollmentPage 
-          onBackHome={() => setActivePage('home')} 
-          defaultCourseId={defaultCourseId} 
-        />
+        <div data-section="enrollment">
+          <EnrollmentPage 
+            onBackHome={() => setActivePage('home')} 
+            defaultCourseId={defaultCourseId} 
+          />
+        </div>
       );
     }
 
     if (activePage === 'about') {
-      return <AboutPage />;
+      return <div data-section="about"><AboutPage /></div>;
     }
 
     if (activePage === 'services') {
-      return <ServicesPage />;
+      return <div data-section="services"><ServicesPage /></div>;
     }
 
     if (activePage === 'faqs') {
       return (
-        <FaqsPage 
-          onEnroll={() => setActivePage('enroll')} 
-        />
+        <div data-section="faqs">
+          <FaqsPage 
+            onEnroll={() => setActivePage('enroll')} 
+          />
+        </div>
       );
     }
 
@@ -158,7 +184,7 @@ function App() {
 
     return (
       <div className="page-wrapper container">
-        <section className="content-section">
+        <section className="content-section" data-section="hero">
           <div className="hero-split">
             <div className="hero-left">
               <span className="hero-heading-become">Become an</span>
@@ -219,17 +245,21 @@ function App() {
           </div>
         </section>
 
-        <div id="programs-section">
+        <div id="programs-section" data-section="programs">
           <ProgramsSection onViewDetails={(courseId) => setActivePage(`course-${courseId}`)} />
         </div>
-        <div id="benefits-section">
+        <div id="benefits-section" data-section="benefits">
           <BenefitsSection />
         </div>
-        <div id="roadmap-section">
+        <div id="roadmap-section" data-section="roadmap">
           <RoadmapSection />
         </div>
-        <CompaniesSection />
-        <SuccessStories />
+        <div data-section="companies">
+          <CompaniesSection />
+        </div>
+        <div data-section="success-stories">
+          <SuccessStories />
+        </div>
       </div>
     );
   };
@@ -250,6 +280,7 @@ function App() {
         robotClicked={robotClicked}
         onRobotClick={handleRobotClick}
         blinkTrigger={blinkTrigger}
+        hoveredSection={hoveredSection}
       />
     </div>
   );
