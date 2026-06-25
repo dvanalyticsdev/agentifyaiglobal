@@ -1,32 +1,83 @@
-# React + TypeScript + Vite
+﻿# Agentify AI Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Last updated: 2026-06-24
 
-Currently, two official plugins are available:
+This project is the current Agentify AI marketing website built with React, TypeScript, and Vite. It also includes a grounded website chatbot named Eva, backed by Gemini for local development and Vercel deployment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Current functionality
+- Multi-section marketing site for Agentify AI
+- Dedicated content views for About, Services, FAQs, Enrollment, program details, and success-story sections
+- Animated hero and interaction effects
+- Course/program data-driven pages from `src/data/coursesData.*`
+- Chatbot widget with page-aware context
+- Gemini-backed answer generation through local server and serverless API routes
+- Grounded knowledge layer for courses, site sections, services, FAQs, roadmaps, and contact information
+- Health endpoint for chatbot configuration checks
 
-## React Compiler
+## Main frontend areas
+Key files in `src/components/`:
+- `Header.tsx`
+- `AboutPage.tsx`
+- `ServicesPage.tsx`
+- `FaqsPage.tsx`
+- `EnrollmentPage.tsx`
+- `CourseDetailPage.tsx`
+- `ProgramsSection.tsx`
+- `BenefitsSection.tsx`
+- `RoadmapSection.tsx`
+- `SuccessStories.tsx`
+- `ChatbotWidget.tsx`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Chatbot architecture
+- `server/chatbotApi.mjs` - shared chatbot request logic
+- `server/chatbotKnowledge.mjs` - grounded site/course knowledge and policy layer
+- `server/chatbotServer.mjs` - local HTTP chatbot server
+- `api/chat.mjs` - Vercel serverless chatbot endpoint
+- `api/health.mjs` - Vercel health endpoint
 
-## Expanding the Oxlint configuration
+## Current chatbot endpoints
+Local or deployed chatbot layer exposes:
+- `GET /api/health`
+- `POST /api/chat`
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Local development
+Prerequisites:
+- Node.js
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Install dependencies:
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Run the website:
+```bash
+npm run dev
+```
+
+Run the chatbot server locally:
+```bash
+npm run chatbot
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+Other useful commands:
+```bash
+npm run lint
+npm run preview
+```
+
+## Environment variables
+Use `.env` for the chatbot/runtime configuration.
+
+Current variables used by the chatbot layer include:
+- `GEMINI_API_KEY` - required for chatbot responses
+- `GEMINI_MODEL` - optional model override, defaults to `gemini-3.1-flash-lite`
+- `CHATBOT_PORT` - optional local chatbot port, defaults to `8787`
+
+## Notes
+- The previous README was still the default Vite template. This version documents the actual React site, chatbot server, and grounded knowledge system that now ship with the project.
+- `vercel.json` and `api/` are part of the active deployment path, not just experimental files.

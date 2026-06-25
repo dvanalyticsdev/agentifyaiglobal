@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const slideshowImages = [
+  '/hero-stories/hero-section-first-image.jpeg',
   '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM (1).jpeg',
   '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM (2).jpeg',
   '/hero-stories/WhatsApp Image 2026-06-24 at 8.54.39 PM.jpeg',
