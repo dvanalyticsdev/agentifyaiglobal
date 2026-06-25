@@ -32,6 +32,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
   hoveredSection,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const widgetRef = useRef<HTMLDivElement>(null);
   const [relativeMouse, setRelativeMouse] = useState({ x: 0, y: 0 });
 
@@ -299,31 +300,65 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
         </div>
       ) : null}
 
-      <motion.div 
-        className={`chatbot-shell ${isOpen ? 'open' : ''}`}
-        drag={!isOpen}
-        dragMomentum={false}
-        dragElastic={0.1}
-        whileDrag={{ scale: 1.02 }}
-      >
-        {!isOpen && (
-          <div className="robot-widget-container" ref={widgetRef}>
-            <RobotSpeechBubbles 
-              pose={robotPose} 
-              isClicked={robotClicked} 
-              onClick={() => setIsOpen(true)}
-              hoveredSection={hoveredSection}
-            />
-            <RobotCanvas 
-              pose={robotPose} 
-              onRobotClick={onRobotClick} 
-              mini={true} 
-              blinkTrigger={blinkTrigger}
-              globalMouse={relativeMouse}
-            />
-          </div>
-        )}
-      </motion.div>
+      {/* Minimized restore pill */}
+      {isMinimized && !isOpen && (
+        <motion.button
+          className="chatbot-restore-pill"
+          onClick={() => setIsMinimized(false)}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0, opacity: 0 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          title="Bring Eva back"
+        >
+          <span className="restore-pill-icon">🤖</span>
+          <span className="restore-pill-text">Eva</span>
+        </motion.button>
+      )}
+
+      {/* Full robot widget */}
+      {!isMinimized && (
+        <motion.div 
+          className={`chatbot-shell ${isOpen ? 'open' : ''}`}
+          drag={!isOpen}
+          dragMomentum={false}
+          dragElastic={0.1}
+          whileDrag={{ scale: 1.02 }}
+        >
+          {!isOpen && (
+            <div className="robot-widget-container" ref={widgetRef}>
+              {/* Minimize button */}
+              <button
+                className="chatbot-minimize-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMinimized(true);
+                }}
+                title="Minimize Eva"
+                aria-label="Minimize chatbot"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 7h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </button>
+              <RobotSpeechBubbles 
+                pose={robotPose} 
+                isClicked={robotClicked} 
+                onClick={() => setIsOpen(true)}
+                hoveredSection={hoveredSection}
+              />
+              <RobotCanvas 
+                pose={robotPose} 
+                onRobotClick={onRobotClick} 
+                mini={true} 
+                blinkTrigger={blinkTrigger}
+                globalMouse={relativeMouse}
+              />
+            </div>
+          )}
+        </motion.div>
+      )}
     </>
   );
 };
