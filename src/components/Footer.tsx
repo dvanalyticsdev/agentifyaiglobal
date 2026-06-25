@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
         <div className="center-cards-grid">
           
           {/* Dubai Center */}
-          <div className="center-card teal">
+          <div className="center-card dubai teal">
             <div className="card-top-accent"></div>
             <div className="center-card-body">
               <div className="center-header-row">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Bangalore Center */}
-          <div className="center-card blue">
+          <div className="center-card bangalore blue">
             <div className="card-top-accent"></div>
             <div className="center-card-body">
               <div className="center-header-row">
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Bhubneshwar Center */}
-          <div className="center-card purple">
+          <div className="center-card bhubneshwar purple">
             <div className="card-top-accent"></div>
             <div className="center-card-body">
               <div className="center-header-row">

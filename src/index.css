@@ -1170,6 +1170,73 @@ a {
   height: 20px;
 }
 
+/* Side Slider Controls */
+.slider-outer-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.side-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #111111;
+}
+
+.side-slider-arrow:hover {
+  background-color: #ffffff;
+  color: #0090ff;
+  border-color: #0090ff;
+  box-shadow: 0 6px 20px rgba(0, 144, 255, 0.18);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.side-slider-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.side-slider-arrow.prev {
+  left: -80px; /* Center of button on the left edge of the white panel */
+}
+
+.side-slider-arrow.next {
+  right: -80px; /* Center of button on the right edge of the white panel */
+}
+
+.side-slider-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .side-slider-arrow.prev {
+    left: -56px;
+  }
+  .side-slider-arrow.next {
+    right: -56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-slider-arrow {
+    display: none;
+  }
+}
+
 /* Slider Container & Track */
 .slider-container {
   width: 100%;
@@ -1287,8 +1354,8 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 2.5rem;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
   flex-grow: 1; /* Push the button to the bottom */
 }
 
@@ -1302,7 +1369,7 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   flex-shrink: 0;
 }
 
@@ -1317,7 +1384,7 @@ a {
 .bullet-text {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.25;
   text-align: left;
 }
 
@@ -1790,8 +1857,6 @@ a {
 
 /* Card base */
 .benefit-card {
-  background: #ffffff;
-  border: 1px solid #eaeaea;
   border-radius: 20px;
   padding: 2.25rem 2rem;
   display: flex;
@@ -1801,12 +1866,21 @@ a {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.015);
   overflow: visible;
+
+  /* Dual-tone Gradient Border */
+  border: 2.5px solid transparent;
+  background-image: 
+    linear-gradient(#ffffff, #ffffff), 
+    linear-gradient(135deg, #0090ff 0%, #001c3d 100%);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
 }
 
 .benefit-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 20px 40px rgba(0, 144, 255, 0.15),
+    0 1px 3px rgba(0, 144, 255, 0.05);
 }
 
 /* Number Badge */
@@ -1820,17 +1894,9 @@ a {
   padding: 0.25rem 0.65rem;
   border-radius: 5px;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
-  background-color: #0f172a;
+  box-shadow: 0 4px 10px rgba(0, 144, 255, 0.25);
+  background-image: linear-gradient(135deg, #0090ff 0%, #001c3d 100%);
 }
-
-/* Badge colors matching themes */
-.benefit-card.blue .benefit-number-badge { background-color: #0284c7; }
-.benefit-card.purple .benefit-number-badge { background-color: #7c3aed; }
-.benefit-card.indigo .benefit-number-badge { background-color: #4f46e5; }
-.benefit-card.magenta .benefit-number-badge { background-color: #db2777; }
-.benefit-card.orange .benefit-number-badge { background-color: #ea580c; }
-.benefit-card.teal .benefit-number-badge { background-color: #0d9488; }
 
 /* Icon Container */
 .benefit-icon-wrapper {
@@ -1841,8 +1907,10 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #f8fafc;
-  border: 1px solid #f1f5f9;
+  border: 2.5px solid transparent;
+  background-image: linear-gradient(#f8fafc, #f8fafc), linear-gradient(135deg, #0090ff 0%, #001c3d 100%);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
   overflow: hidden;
 }
 
@@ -2085,45 +2153,78 @@ a {
 }
 
 /* Roadmap Slider controls */
-.roadmap-slider-controls {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.roadmap-outer-wrapper {
+  position: relative;
+  width: 100%;
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
 }
 
-.roadmap-arrow {
-  width: 36px;
-  height: 36px;
+.side-roadmap-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #f5f5f7;
-  color: #1e293b;
-  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #111111;
 }
 
-.roadmap-arrow svg {
-  width: 18px;
-  height: 18px;
+.side-roadmap-arrow:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
-.roadmap-slider-controls.ds .roadmap-arrow:hover {
-  background-color: #0284c7;
-  color: #ffffff;
+.side-roadmap-arrow.prev {
+  left: -24px;
+}
+
+.side-roadmap-arrow.next {
+  right: -24px;
+}
+
+.side-roadmap-arrow.ds:hover {
+  background-color: #ffffff;
+  color: #0284c7;
   border-color: #0284c7;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.18);
+  transform: translateY(-50%) scale(1.08);
 }
 
-.roadmap-slider-controls.cyber .roadmap-arrow:hover {
-  background-color: #0d9488;
-  color: #ffffff;
+.side-roadmap-arrow.cyber:hover {
+  background-color: #ffffff;
+  color: #0d9488;
   border-color: #0d9488;
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.18);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.side-roadmap-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .side-roadmap-arrow.prev {
+    left: -12px;
+  }
+  .side-roadmap-arrow.next {
+    right: -12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-roadmap-arrow {
+    display: none;
+  }
 }
 
 .roadmap-steps-wrapper {
@@ -2155,17 +2256,22 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.075);
   border-radius: 20px;
   padding: 1.75rem 1.25rem;
   box-shadow: 
     0 10px 30px rgba(0, 0, 0, 0.04), 
-    0 1px 3px rgba(0, 0, 0, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    0 1px 3px rgba(0, 0, 0, 0.02);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Dual-tone Gradient Border */
+  border: 2.5px solid transparent;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
+    linear-gradient(135deg, #0090ff 0%, #001c3d 100%);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
 }
 
 .roadmap-step-card:hover {
@@ -2174,18 +2280,14 @@ a {
 
 .roadmap-step-card.ds:hover {
   box-shadow: 
-    0 20px 40px rgba(2, 132, 199, 0.12),
-    0 1px 3px rgba(2, 132, 199, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border-color: rgba(2, 132, 199, 0.35);
+    0 20px 40px rgba(2, 132, 199, 0.15),
+    0 1px 3px rgba(2, 132, 199, 0.05);
 }
 
 .roadmap-step-card.cyber:hover {
   box-shadow: 
-    0 20px 40px rgba(13, 148, 136, 0.12),
-    0 1px 3px rgba(13, 148, 136, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border-color: rgba(13, 148, 136, 0.35);
+    0 20px 40px rgba(13, 148, 136, 0.15),
+    0 1px 3px rgba(13, 148, 136, 0.05);
 }
 
 .roadmap-icon-container {
@@ -2207,6 +2309,8 @@ a {
 
 .roadmap-icon-svg circle:first-of-type {
   fill: #ffffff;
+  stroke: url(#roadmapLogoGrad) !important;
+  stroke-width: 2.2px !important;
   transition: all 0.3s ease;
 }
 
@@ -2319,7 +2423,7 @@ a {
   .roadmap-arrow-svg {
     animation: pulseArrowVertical 2s infinite ease-in-out;
   }
-  .roadmap-slider-controls {
+  .side-roadmap-arrow {
     display: none; /* Hide slider arrows on mobile since list is fully vertical */
   }
 }
@@ -2540,7 +2644,7 @@ a {
 
 /* Center Card - Matches site theme */
 .center-card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid #e2e8f0;
   border-radius: 24px;
   position: relative;
@@ -2551,9 +2655,40 @@ a {
   flex-direction: column;
 }
 
+/* Background Image Layer with Parallax scale */
+.center-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.center-card.dubai::before {
+  background-image: url('/office-bg/dubai.png');
+}
+
+.center-card.bangalore::before {
+  background-image: url('/office-bg/bangalore.png');
+}
+
+.center-card.bhubneshwar::before {
+  background-image: url('/office-bg/bhubneshwar.png');
+}
+
+.center-card:hover::before {
+  transform: scale(1.08);
+}
+
 .center-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Top Accent Bars */
@@ -2565,6 +2700,7 @@ a {
   height: 6px;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
+  z-index: 3; /* Keep accent bar on top of the glass overlay */
 }
 
 .center-card.blue .card-top-accent { background-color: #0284c7; }
@@ -2577,6 +2713,14 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.92) 65%, #ffffff 95%);
+  transition: all 0.4s ease;
+}
+
+.center-card:hover .center-card-body {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.85) 65%, #ffffff 95%);
 }
 
 /* Header Row inside card */

@@ -363,33 +363,35 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onViewDetails 
     <section className="programs-section" id="courses">
       <div className="programs-section-header reveal-on-scroll">
         <div className="section-title-wrapper">
-          <h2 className="section-title-divider">PROGRAMS</h2>
-        </div>
-        <div className="slider-controls">
-          <button className="slider-arrow prev" onClick={() => slide('left')} aria-label="Previous programs">
-            <svg viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <button className="slider-arrow next" onClick={() => slide('right')} aria-label="Next programs">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+          <h2 className="section-title-divider">OUR TRAINING PROGRAM</h2>
         </div>
       </div>
 
-      <div className="slider-container">
-        <div className="slider-track" ref={sliderRef}>
-          {programs.map((program, idx) => (
-            <ProgramCard 
-              key={program.id} 
-              program={program} 
-              onViewDetails={onViewDetails} 
-              index={idx}
-            />
-          ))}
+      <div className="slider-outer-wrapper">
+        <button className="side-slider-arrow prev" onClick={() => slide('left')} aria-label="Previous programs">
+          <svg viewBox="0 0 24 24">
+            <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        <div className="slider-container">
+          <div className="slider-track" ref={sliderRef}>
+            {programs.map((program, idx) => (
+              <ProgramCard 
+                key={program.id} 
+                program={program} 
+                onViewDetails={onViewDetails} 
+                index={idx}
+              />
+            ))}
+          </div>
         </div>
+
+        <button className="side-slider-arrow next" onClick={() => slide('right')} aria-label="Next programs">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
     </section>
   );

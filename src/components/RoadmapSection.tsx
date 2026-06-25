@@ -35,7 +35,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Python, Statistics, SQL, Excel',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="22" y="24" width="36" height="24" rx="2" fill="none" stroke="#0284c7" strokeWidth="2" />
           <path d="M30 48h20M40 48v8M34 56h12" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" />
           <path d="M32 32l-4 4 4 4M48 32l4 4-4 4" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -49,7 +55,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'EDA, Data Wrangling, Visualization',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <ellipse cx="40" cy="26" rx="14" ry="4.5" fill="none" stroke="#0284c7" strokeWidth="2" />
           <path d="M26 26v8c0 2.5 6.3 4.5 14 4.5s14-2 14-4.5v-8" fill="none" stroke="#0284c7" strokeWidth="2" />
           <path d="M26 34v8c0 2.5 6.3 4.5 14 4.5s14-2 14-4.5v-8" fill="none" stroke="#0284c7" strokeWidth="2" />
@@ -63,7 +75,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Supervised & Unsupervised ML',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <path d="M38 30a6 6 0 0 0-4-3.5a5 5 0 0 0-5 3a5.5 5.5 0 0 0-1 6.5a6 6 0 0 0 1 7.5a5 5 0 0 0 4 3a6 6 0 0 0 5-2.5" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" />
           <path d="M42 30a6 6 0 0 1 4-3.5a5 5 0 0 1 5 3a5.5 5.5 0 0 1 1 6.5a6 6 0 0 1-1 7.5a5 5 0 0 1-4 3a6 6 0 0 1-5-2.5" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" />
           <line x1="40" y1="24" x2="40" y2="56" stroke="rgba(2, 132, 199, 0.3)" strokeWidth="1.5" strokeDasharray="3 3" />
@@ -82,7 +100,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Deep Learning, NLP, Computer Vision',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <circle cx="40" cy="40" r="5" fill="none" stroke="#0284c7" strokeWidth="2" />
           <circle cx="26" cy="30" r="4" fill="none" stroke="#0284c7" strokeWidth="2" />
           <circle cx="26" cy="50" r="4" fill="none" stroke="#0284c7" strokeWidth="2" />
@@ -103,7 +127,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Scikit-learn, TensorFlow, Power BI, Tableau',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="23" y="25" width="34" height="26" rx="2" fill="none" stroke="#0284c7" strokeWidth="2" />
           <line x1="23" y1="32" x2="57" y2="32" stroke="#0284c7" strokeWidth="1.5" />
           <circle cx="28" cy="28.5" r="1.2" fill="#0284c7" />
@@ -118,7 +148,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'End-to-end Industry Projects',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="24" y="28" width="32" height="24" rx="3" fill="none" stroke="#0284c7" strokeWidth="2" />
           <path d="M34 28v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" fill="none" stroke="#0284c7" strokeWidth="2" />
           <path d="M24 37h32" stroke="#0284c7" strokeWidth="2" />
@@ -132,7 +168,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Resume, Interviews, Job Placement',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0284c7" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <circle cx="40" cy="40" r="18" fill="none" stroke="#0284c7" strokeWidth="2.2" />
           <circle cx="40" cy="40" r="10" fill="none" stroke="#0284c7" strokeWidth="1.8" />
           <circle cx="40" cy="40" r="3" fill="#0284c7" />
@@ -152,7 +194,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Networking, OS, TCP/IP',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="23" y="26" width="34" height="22" rx="2" fill="none" stroke="#0d9488" strokeWidth="2" />
           <line x1="18" y1="48" x2="62" y2="48" stroke="#0d9488" strokeWidth="3.5" strokeLinecap="round" />
           <line x1="36" y1="48" x2="44" y2="48" stroke="#334155" strokeWidth="4" />
@@ -166,7 +214,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'CIA Triad, Threats, Security Controls',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <path d="M40 22c6.5 0 15 2.5 15 2.5v16.5c0 8.5-7.5 14.5-15 17-7.5-2.5-15-8.5-15-17V24.5s8.5-2.5 15-2.5z" fill="none" stroke="#0d9488" strokeWidth="2" strokeLinejoin="round" />
           <polygon points="40,29 42,33 46,33 43,35 44,39 40,37 36,39 37,35 34,33 38,33" fill="#0d9488" />
         </svg>
@@ -178,7 +232,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Firewalls, IDS/IPS, VPN, Wireshark',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <circle cx="40" cy="40" r="12" fill="none" stroke="#0d9488" strokeWidth="2" />
           <circle cx="40" cy="22" r="3" fill="#0d9488" />
           <circle cx="23" cy="49" r="3" fill="#0d9488" />
@@ -197,7 +257,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Recon, Scanning, Exploitation',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <path d="M40 22c-7 0-11 5-11 11c0 3 .5 5 1.5 6.5L34 49h12l3.5-9.5c1-1.5 1.5-3.5 1.5-6.5c0-6-4-11-11-11z" fill="none" stroke="#0d9488" strokeWidth="2.2" strokeLinejoin="round" />
           <path d="M25 56c0-6 6-8 15-8s15 2 15 8" fill="none" stroke="#0d9488" strokeWidth="2" strokeLinecap="round" />
           <rect x="33" y="32" width="14" height="4" rx="1" fill="#0d9488" />
@@ -210,7 +276,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'SOC, SIEM, Log Analysis',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="23" y="25" width="34" height="24" rx="2" fill="none" stroke="#0d9488" strokeWidth="2" />
           <line x1="33" y1="49" x2="30" y2="56" stroke="#0d9488" strokeWidth="2" />
           <line x1="47" y1="49" x2="50" y2="56" stroke="#0d9488" strokeWidth="2" />
@@ -225,7 +297,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Malware Analysis, Incident Response',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <circle cx="40" cy="42" r="10" fill="none" stroke="#0d9488" strokeWidth="2" />
           <circle cx="40" cy="29" r="4.5" fill="none" stroke="#0d9488" strokeWidth="2" />
           <path d="M37 25c-1-2.5-3-3.5-3-3.5M43 25c1-2.5 3-3.5 3-3.5" fill="none" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
@@ -240,7 +318,13 @@ export const RoadmapSection: React.FC = () => {
       subtext: 'Certifications, Interviews, Jobs',
       icon: (
         <svg viewBox="0 0 80 80" className="roadmap-icon-svg cyber">
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#0d9488" strokeWidth="2" />
+          <defs>
+            <linearGradient id="roadmapLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0090ff" />
+              <stop offset="100%" stopColor="#001c3d" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="url(#roadmapLogoGrad)" strokeWidth="2" />
           <rect x="25" y="24" width="30" height="38" rx="3" fill="none" stroke="#0d9488" strokeWidth="2" />
           <path d="M35 24v-2h10v2" fill="none" stroke="#0d9488" strokeWidth="2" />
           <polyline points="31,34 33,36 37,32" fill="none" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -256,6 +340,7 @@ export const RoadmapSection: React.FC = () => {
 
   return (
     <section className="roadmap-section reveal-on-scroll" id="roadmap">
+
       <div className="roadmap-container">
         
         {/* Title Header */}
@@ -272,55 +357,55 @@ export const RoadmapSection: React.FC = () => {
         <div className="roadmap-track-container">
           <div className="roadmap-track-header ds">
             <span className="roadmap-track-pill">DATA SCIENTIST ROADMAP</span>
-            
-            {/* Slider control arrows */}
-            <div className="roadmap-slider-controls ds">
-              <button 
-                className="roadmap-arrow prev" 
-                onClick={() => scroll(dsScrollRef, 'left')} 
-                aria-label="Previous Data Scientist steps"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button 
-                className="roadmap-arrow next" 
-                onClick={() => scroll(dsScrollRef, 'right')} 
-                aria-label="Next Data Scientist steps"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
           </div>
 
-          <div 
-            className="roadmap-steps-wrapper" 
-            ref={dsScrollRef}
-            tabIndex={0}
-            onKeyDown={(e) => handleKeyDown(e, dsScrollRef)}
-            aria-label="Data Scientist Roadmap steps. Use Left/Right arrow keys to scroll."
-          >
-            {dataScientistSteps.map((step, idx) => (
-              <React.Fragment key={`ds-${step.number}`}>
-                <div className="roadmap-step-card ds">
-                  <div className="roadmap-icon-container">
-                    {step.icon}
+          <div className="roadmap-outer-wrapper">
+            <button 
+              className="side-roadmap-arrow prev ds" 
+              onClick={() => scroll(dsScrollRef, 'left')} 
+              aria-label="Previous Data Scientist steps"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
+            <div 
+              className="roadmap-steps-wrapper" 
+              ref={dsScrollRef}
+              tabIndex={0}
+              onKeyDown={(e) => handleKeyDown(e, dsScrollRef)}
+              aria-label="Data Scientist Roadmap steps. Use Left/Right arrow keys to scroll."
+            >
+              {dataScientistSteps.map((step, idx) => (
+                <React.Fragment key={`ds-${step.number}`}>
+                  <div className="roadmap-step-card ds">
+                    <div className="roadmap-icon-container">
+                      {step.icon}
+                    </div>
+                    <h3 className="roadmap-step-title">{step.title}</h3>
+                    <p className="roadmap-step-subtext">{step.subtext}</p>
                   </div>
-                  <h3 className="roadmap-step-title">{step.title}</h3>
-                  <p className="roadmap-step-subtext">{step.subtext}</p>
-                </div>
-                {idx < dataScientistSteps.length - 1 && (
-                  <div className="roadmap-arrow-container ds">
-                    <svg viewBox="0 0 24 24" className="roadmap-arrow-svg">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
+                  {idx < dataScientistSteps.length - 1 && (
+                    <div className="roadmap-arrow-container ds">
+                      <svg viewBox="0 0 24 24" className="roadmap-arrow-svg">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+
+            <button 
+              className="side-roadmap-arrow next ds" 
+              onClick={() => scroll(dsScrollRef, 'right')} 
+              aria-label="Next Data Scientist steps"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -328,55 +413,55 @@ export const RoadmapSection: React.FC = () => {
         <div className="roadmap-track-container">
           <div className="roadmap-track-header cyber">
             <span className="roadmap-track-pill">CYBER SPECIALIST ROADMAP</span>
-            
-            {/* Slider control arrows */}
-            <div className="roadmap-slider-controls cyber">
-              <button 
-                className="roadmap-arrow prev" 
-                onClick={() => scroll(cyberScrollRef, 'left')} 
-                aria-label="Previous Cyber Specialist steps"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button 
-                className="roadmap-arrow next" 
-                onClick={() => scroll(cyberScrollRef, 'right')} 
-                aria-label="Next Cyber Specialist steps"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
           </div>
 
-          <div 
-            className="roadmap-steps-wrapper" 
-            ref={cyberScrollRef}
-            tabIndex={0}
-            onKeyDown={(e) => handleKeyDown(e, cyberScrollRef)}
-            aria-label="Cyber Specialist Roadmap steps. Use Left/Right arrow keys to scroll."
-          >
-            {cyberSpecialistSteps.map((step, idx) => (
-              <React.Fragment key={`cyber-${step.number}`}>
-                <div className="roadmap-step-card cyber">
-                  <div className="roadmap-icon-container">
-                    {step.icon}
+          <div className="roadmap-outer-wrapper">
+            <button 
+              className="side-roadmap-arrow prev cyber" 
+              onClick={() => scroll(cyberScrollRef, 'left')} 
+              aria-label="Previous Cyber Specialist steps"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
+            <div 
+              className="roadmap-steps-wrapper" 
+              ref={cyberScrollRef}
+              tabIndex={0}
+              onKeyDown={(e) => handleKeyDown(e, cyberScrollRef)}
+              aria-label="Cyber Specialist Roadmap steps. Use Left/Right arrow keys to scroll."
+            >
+              {cyberSpecialistSteps.map((step, idx) => (
+                <React.Fragment key={`cyber-${step.number}`}>
+                  <div className="roadmap-step-card cyber">
+                    <div className="roadmap-icon-container">
+                      {step.icon}
+                    </div>
+                    <h3 className="roadmap-step-title">{step.title}</h3>
+                    <p className="roadmap-step-subtext">{step.subtext}</p>
                   </div>
-                  <h3 className="roadmap-step-title">{step.title}</h3>
-                  <p className="roadmap-step-subtext">{step.subtext}</p>
-                </div>
-                {idx < cyberSpecialistSteps.length - 1 && (
-                  <div className="roadmap-arrow-container cyber">
-                    <svg viewBox="0 0 24 24" className="roadmap-arrow-svg">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
+                  {idx < cyberSpecialistSteps.length - 1 && (
+                    <div className="roadmap-arrow-container cyber">
+                      <svg viewBox="0 0 24 24" className="roadmap-arrow-svg">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+
+            <button 
+              className="side-roadmap-arrow next cyber" 
+              onClick={() => scroll(cyberScrollRef, 'right')} 
+              aria-label="Next Cyber Specialist steps"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
         </div>
 
