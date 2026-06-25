@@ -1,4 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { RobotCanvas } from './RobotCanvas';
+import { RobotSpeechBubbles } from './RobotSpeechBubbles';
 
 type ChatRole = 'assistant' | 'user';
 
@@ -10,15 +13,55 @@ interface ChatMessage {
 
 interface ChatbotWidgetProps {
   activePage: string;
+  robotPose: 'idle' | 'wave' | 'programs' | 'benefits' | 'roadmap' | 'footer';
+  robotClicked: boolean;
+  onRobotClick: () => void;
+  blinkTrigger: number;
 }
-
-
 
 const initialAssistantMessage =
   "Hi! I'm Eva, your Agentify AI Guide. I can help you with anything on our site—from details on our training programs and career roadmaps, to enterprise AI services, office locations, and our mission. What can I help you find today?";
 
-export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ activePage }) => {
+export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ 
+  activePage,
+  robotPose,
+  robotClicked,
+  onRobotClick,
+  blinkTrigger,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const [relativeMouse, setRelativeMouse] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (isOpen) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      let robotCenterX = window.innerWidth - 100;
+      let robotCenterY = window.innerHeight - 100;
+
+      if (widgetRef.current) {
+        const rect = widgetRef.current.getBoundingClientRect();
+        robotCenterX = rect.left + rect.width / 2;
+        robotCenterY = rect.top + rect.height / 2;
+      }
+
+      const dx = e.clientX - robotCenterX;
+      const dy = robotCenterY - e.clientY; // Invert Y so up is positive
+
+      // Normalize by 250px reference radius, mapping tracking to [-1.2, 1.2]
+      setRelativeMouse({
+        x: dx / 250,
+        y: dy / 250,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isOpen]);
+
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isConfigured, setIsConfigured] = useState(true);
@@ -168,7 +211,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ activePage }) => {
   };
 
   return (
-    <div className={`chatbot-shell ${isOpen ? 'open' : ''}`}>
+    <>
       {isOpen ? (
         <div className="chatbot-overlay" onClick={() => setIsOpen(false)}>
           <section
@@ -222,8 +265,6 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ activePage }) => {
                     </div>
                   ) : null}
                 </div>
-
-
               </div>
 
               <div className="chatbot-footer">
@@ -256,10 +297,30 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ activePage }) => {
         </div>
       ) : null}
 
-      <button type="button" className="chatbot-launcher" onClick={() => setIsOpen(true)}>
-        <span className="chatbot-launcher-dot"></span>
-        Meet Eva
-      </button>
-    </div>
+      <motion.div 
+        className={`chatbot-shell ${isOpen ? 'open' : ''}`}
+        drag={!isOpen}
+        dragMomentum={false}
+        dragElastic={0.1}
+        whileDrag={{ scale: 1.02 }}
+      >
+        {!isOpen && (
+          <div className="robot-widget-container" ref={widgetRef}>
+            <RobotSpeechBubbles 
+              pose={robotPose} 
+              isClicked={robotClicked} 
+              onClick={() => setIsOpen(true)}
+            />
+            <RobotCanvas 
+              pose={robotPose} 
+              onRobotClick={onRobotClick} 
+              mini={true} 
+              blinkTrigger={blinkTrigger}
+              globalMouse={relativeMouse}
+            />
+          </div>
+        )}
+      </motion.div>
+    </>
   );
 };

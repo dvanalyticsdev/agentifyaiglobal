@@ -18,10 +18,63 @@ import { CompaniesSection } from './components/CompaniesSection';
 function App() {
   const [activePage, setActivePage] = useState('home');
   const scrollRevealRef = useScrollReveal(activePage);
+  const [robotPose, setRobotPose] = useState<'idle' | 'wave' | 'programs' | 'benefits' | 'roadmap' | 'footer'>('idle');
+  const [robotClicked, setRobotClicked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activePage]);
+
+  useEffect(() => {
+    if (activePage !== 'home') return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+
+      const programsElem = document.getElementById('programs-section');
+      const benefitsElem = document.getElementById('benefits-section');
+      const roadmapElem = document.getElementById('roadmap-section');
+
+      const buffer = 320; // trigger early when scrolling near
+
+      if (scrollPercent > 88) {
+        setRobotPose('footer');
+      } else if (roadmapElem && scrollY > roadmapElem.offsetTop - buffer) {
+        setRobotPose('roadmap');
+      } else if (benefitsElem && scrollY > benefitsElem.offsetTop - buffer) {
+        setRobotPose('benefits');
+      } else if (programsElem && scrollY > programsElem.offsetTop - buffer) {
+        setRobotPose('programs');
+      } else {
+        setRobotPose('idle');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activePage]);
+
+  const [blinkTrigger, setBlinkTrigger] = useState(0);
+
+  useEffect(() => {
+    const handleGlobalClick = () => {
+      setBlinkTrigger((prev) => prev + 1);
+    };
+    window.addEventListener('click', handleGlobalClick);
+    return () => window.removeEventListener('click', handleGlobalClick);
+  }, []);
+
+
+  const handleRobotClick = () => {
+    setRobotClicked(true);
+    setTimeout(() => {
+      setRobotClicked(false);
+    }, 1800);
+  };
 
   const handleNavClick = (pageId: string) => {
     setActivePage(pageId);
@@ -169,7 +222,9 @@ function App() {
         <div id="programs-section">
           <ProgramsSection onViewDetails={(courseId) => setActivePage(`course-${courseId}`)} />
         </div>
-        <BenefitsSection />
+        <div id="benefits-section">
+          <BenefitsSection />
+        </div>
         <div id="roadmap-section">
           <RoadmapSection />
         </div>
@@ -189,7 +244,13 @@ function App() {
         </div>
       </main>
       <Footer />
-      <ChatbotWidget activePage={activePage} />
+      <ChatbotWidget 
+        activePage={activePage} 
+        robotPose={robotPose}
+        robotClicked={robotClicked}
+        onRobotClick={handleRobotClick}
+        blinkTrigger={blinkTrigger}
+      />
     </div>
   );
 }
