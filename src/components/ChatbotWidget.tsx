@@ -333,15 +333,18 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                 className="chatbot-minimize-btn"
                 onClick={(e) => {
                   e.stopPropagation();
+                  e.preventDefault();
                   setIsMinimized(true);
                 }}
+                onPointerDown={(e) => e.stopPropagation()}
                 title="Minimize Eva"
                 aria-label="Minimize chatbot"
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M1 7h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="10" height="2" viewBox="0 0 10 2" fill="none">
+                  <path d="M1 1h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </button>
+
               <RobotSpeechBubbles 
                 pose={robotPose} 
                 isClicked={robotClicked} 

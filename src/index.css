@@ -6669,17 +6669,17 @@ a {
   }
 }
 
-/* === Minimize Button on Robot Widget === */
+/* === Minimize Button (absolute position inside widget container) === */
 .chatbot-minimize-btn {
   position: absolute;
   top: -8px;
   right: -8px;
   z-index: 20;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 1.5px solid rgba(6, 182, 212, 0.35);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(100, 116, 139, 0.25);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #64748b;
@@ -6687,28 +6687,23 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: scale(0.7);
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 0;
-}
-
-.robot-widget-container:hover .chatbot-minimize-btn {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0.9;
 }
 
 .chatbot-minimize-btn:hover {
-  background: rgba(239, 68, 68, 0.12);
-  border-color: rgba(239, 68, 68, 0.5);
+  opacity: 1;
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.4);
   color: #ef4444;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+  transform: scale(1.15);
 }
 
 .chatbot-minimize-btn:active {
-  transform: scale(0.95) !important;
+  transform: scale(0.9);
 }
 
 /* === Restore Pill (shown when minimized) === */
@@ -6762,16 +6757,24 @@ a {
 }
 
 @media (max-width: 480px) {
+  .chatbot-minimize-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 26px;
+    height: 26px;
+  }
+
   .chatbot-restore-pill {
     bottom: 16px;
     right: 16px;
     padding: 8px 14px 8px 10px;
   }
-  
+
   .restore-pill-icon {
     font-size: 1.1rem;
   }
-  
+
   .restore-pill-text {
     font-size: 0.75rem;
   }
