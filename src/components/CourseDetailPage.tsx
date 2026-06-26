@@ -143,7 +143,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
   };
 
   return (
-    <div className={`course-detail-container theme-${course.theme}`}>
+    <div className="course-detail-container theme-blue">
       
       {/* 1. Hero Banner Section */}
       <section className="course-hero">
@@ -234,8 +234,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       <section className="course-overview-section container reveal-on-scroll">
         <div className="overview-split">
           <div className="overview-left">
-            <h2 className="section-title">Program Overview</h2>
-            <div className="title-underline"></div>
+            <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h2 className="section-title">Program Overview</h2>
+              <div className="title-underline"></div>
+            </div>
             <p className="overview-text">{course.overview}</p>
             
             <div className="who-should-join-box">
