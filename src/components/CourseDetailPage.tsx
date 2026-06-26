@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { coursesData } from '../data/coursesData';
 import { useMagneticEffect } from '../hooks/useMagneticEffect';
 import { AnimatedHeroGraphic } from './AnimatedHeroGraphic';
-import { SuccessStories } from './SuccessStories';
 
 const posterImages: Record<string, string> = {
   apids: '/courses-poster/APIDS.jpeg',
@@ -11,6 +10,58 @@ const posterImages: Record<string, string> = {
   genai: '/courses-poster/MPGAA.jpeg',
   specialist: '/courses-poster/DAS.jpeg',
   apcs: '/courses-poster/APCF.jpeg',
+};
+
+const courseSuccessImages: Record<string, string[]> = {
+  apids: [
+    '/Success Stories/APIDS.jpeg',
+    '/Success Stories/APIDS 2.jpeg',
+    '/Success Stories/APIDS 4.jpeg',
+    '/Success Stories/APIDS 5.jpeg',
+  ],
+  apida: [
+    '/Success Stories/APIDA.jpeg',
+    '/Success Stories/APIDA 1.jpeg',
+    '/Success Stories/APIDA 2.jpeg',
+    '/Success Stories/APIDA 3.jpeg',
+  ],
+  aiml: [
+    '/Success Stories/Advance AIML.jpeg',
+    '/Success Stories/Advance AIML 1.jpeg',
+    '/Success Stories/Advance AIML 2.jpeg',
+    '/Success Stories/Advance AIML 3.jpeg',
+    '/Success Stories/Advance AIML 4.jpeg',
+  ],
+  genai: [
+    '/Success Stories/MPGAA.jpeg',
+    '/Success Stories/MPGAA 1.jpeg',
+    '/Success Stories/MPGAA 2.jpeg',
+    '/Success Stories/MPGAA 3.jpeg',
+    '/Success Stories/MPGAA 4.jpeg',
+  ],
+  specialist: [
+    '/Success Stories/DAS.jpeg',
+    '/Success Stories/DAS 1.jpeg',
+    '/Success Stories/DAS 2.jpeg',
+    '/Success Stories/DAS 3.jpeg',
+    '/Success Stories/DAS 4.jpeg',
+  ],
+};
+
+const allSuccessImages = [
+  ...courseSuccessImages.apids,
+  ...courseSuccessImages.apida,
+  ...courseSuccessImages.aiml,
+  ...courseSuccessImages.genai,
+  ...courseSuccessImages.specialist,
+];
+
+const getCourseImages = (id: string): string[] => {
+  const normalizedId = id.toLowerCase();
+  if (normalizedId === 'apcs') {
+    return allSuccessImages;
+  }
+  return courseSuccessImages[normalizedId] || allSuccessImages;
 };
 
 interface CourseDetailPageProps {
@@ -72,10 +123,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
 
             <div className="hero-cta-group">
               <button ref={heroEnrollRef} className="btn btn-enroll-main" onClick={onEnroll}>Enroll Now</button>
-              <a href={`/brochures/${course.id}-syllabus.pdf`} download className="btn btn-download-syllabus" onClick={(e) => {
-                e.preventDefault();
-                alert(`Downloading complete syllabus brochure for ${course.title}...`);
-              }}>
+              <a href="/APIDS-Brochure.pdf" download="APIDS-Brochure.pdf" className="btn btn-download-syllabus">
                 <svg viewBox="0 0 24 24" className="download-icon">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -176,7 +224,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
 
             {/* Slideshow showing GAA hero stories/outcomes */}
             <div className="course-detail-slideshow-container">
-              <AnimatedHeroGraphic />
+              <AnimatedHeroGraphic images={getCourseImages(course.id)} />
             </div>
           </div>
         </div>
@@ -366,8 +414,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         </section>
       )}
 
-      {/* 10. Success Stories */}
-      <SuccessStories />
+      {/* 10. Success Stories section removed */}
 
       {/* 11. Bottom CTA Section */}
       <section className="course-bottom-cta reveal-on-scroll">

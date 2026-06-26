@@ -21,8 +21,12 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
-export const AnimatedHeroGraphic: React.FC = () => {
-  const [images] = useState(() => shuffleArray(slideshowImages));
+interface AnimatedHeroGraphicProps {
+  images?: string[];
+}
+
+export const AnimatedHeroGraphic: React.FC<AnimatedHeroGraphicProps> = ({ images: propImages }) => {
+  const [images] = useState(() => shuffleArray(propImages || slideshowImages));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const touchStartX = useRef<number | null>(null);
