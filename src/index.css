@@ -3148,12 +3148,12 @@ a {
     min-height: auto;
   }
   .center-card {
-    height: 500px;
-    min-height: 500px;
+    height: auto;
+    min-height: 520px;
   }
   .center-card-footer-panel {
-    height: 24%;
-    min-height: 24%;
+    height: auto;
+    min-height: 132px;
     padding: 0.8rem 1rem 0.9rem;
     align-items: flex-start;
   }
