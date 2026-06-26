@@ -28,8 +28,8 @@ export const CompaniesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="companies-header">
-          <span className="companies-subtitle">CAREER PLACEMENTS</span>
-          <h2 className="companies-title">COMPANIES THAT HIRES YOU</h2>
+          <span className="companies-subtitle">Career Placements</span>
+          <h2 className="companies-title">Companies That Hire You</h2>
           <div className="companies-header-line"></div>
         </div>
 
@@ -46,7 +46,7 @@ export const CompaniesSection: React.FC = () => {
 
         {/* AND MORE Footer Text */}
         <div className="companies-footer-text">
-          AND MORE...
+          And More...
         </div>
 
       </div>

@@ -287,7 +287,7 @@ a {
 .hero-badge {
   font-size: 0.85rem;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 2px;
   background-color: #f1f1f3;
   padding: 0.5rem 1.2rem;
@@ -1822,7 +1822,7 @@ a {
 .modal-badge {
   font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
   padding: 0.3rem 0.8rem;
@@ -1875,7 +1875,7 @@ a {
   font-weight: 700;
   color: #111111;
   margin-bottom: 1rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   border-bottom: 1px solid #f0f0f2;
   padding-bottom: 0.5rem;
@@ -1913,7 +1913,7 @@ a {
   font-size: 0.95rem;
   font-weight: 700;
   color: #111111;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
 }
 
@@ -2122,7 +2122,7 @@ a {
   color: #0d9488;
   display: block;
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .benefits-title {
@@ -2347,7 +2347,7 @@ a {
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .banner-sub-text {
@@ -2623,7 +2623,7 @@ a {
   color: #0284c7;
   display: block;
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .stories-title {
@@ -2771,7 +2771,7 @@ a {
   font-weight: 700;
   color: #0284c7; /* Brand Blue */
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .footer-title {
@@ -3000,7 +3000,7 @@ a {
   letter-spacing: 1px;
   padding: 0.35rem 0.85rem;
   border-radius: 100px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .center-badge.blue {
@@ -3127,7 +3127,7 @@ a {
   font-weight: 600;
   color: #64748b; /* Slate-500 */
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* Responsive adjustments */
@@ -3400,7 +3400,7 @@ a {
   padding: 0.4rem 1rem;
   border-radius: 50px;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .hero-pill.accent-pill {
@@ -3524,7 +3524,7 @@ a {
 .stat-card-content h4 {
   font-size: 0.8rem;
   color: #64748b;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   font-weight: 600;
   margin-bottom: 0.15rem;
@@ -3675,7 +3675,7 @@ a {
   font-weight: 700;
   color: var(--course-primary);
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -3866,7 +3866,7 @@ a {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--course-primary);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   margin-bottom: 1.25rem;
 }
@@ -3964,7 +3964,7 @@ a {
   font-size: 0.95rem;
   font-weight: 700;
   color: #0f172a;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 1.25rem;
   letter-spacing: 0.5px;
 }
@@ -4357,7 +4357,7 @@ a {
   font-size: 0.82rem;
   font-weight: 700;
   color: #38bdf8;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.75px;
   margin-bottom: 0.85rem;
 }
@@ -4754,7 +4754,7 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   color: #0284c7;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -5003,7 +5003,7 @@ a {
   font-weight: 700;
   padding: 0.25rem 0.85rem;
   border-radius: 100px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
 }
 
@@ -5159,7 +5159,7 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   color: #0d9488;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -5442,7 +5442,7 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   color: #0284c7;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -6014,7 +6014,7 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   color: #818cf8;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 1rem;
   display: block;
 }
@@ -6102,7 +6102,7 @@ a {
   font-weight: 700;
   letter-spacing: 1px;
   color: #64748b;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 1.5rem;
   display: block;
 }
@@ -6459,7 +6459,7 @@ a {
 .chatbot-eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #0369a1;
   font-weight: 700;
   margin-bottom: 0.2rem;
@@ -6586,7 +6586,7 @@ a {
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .chatbot-message {
@@ -6811,7 +6811,7 @@ a {
 
 .companies-subtitle {
   font-size: 0.85rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.15em;
   color: #0284c7;
   font-weight: 700;
@@ -7108,7 +7108,7 @@ a {
   font-size: 0.72rem;
   color: #06b6d4;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   text-align: center;
   margin-top: 0.35rem;
@@ -7134,7 +7134,7 @@ a {
   gap: 6px;
   font-size: 0.68rem;
   font-weight: 700;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.8px;
   color: #06b6d4;
   margin-bottom: 6px;

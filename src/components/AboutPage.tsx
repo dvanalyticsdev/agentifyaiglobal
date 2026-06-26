@@ -8,7 +8,7 @@ export const AboutPage: React.FC = () => {
       <section className="about-hero-section">
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content container">
-          <span className="about-subtitle">BEHIND THE VISION</span>
+          <span className="about-subtitle">Behind the Vision</span>
           <h1 className="about-title">About Agentify AI Global</h1>
           <div className="about-title-underline"></div>
           <p className="about-lead">
@@ -30,7 +30,7 @@ export const AboutPage: React.FC = () => {
               </svg>
             </div>
             <h3>Our Purpose</h3>
-            <span className="about-card-subtitle">WHY WE EXIST</span>
+            <span className="about-card-subtitle">Why We Exist</span>
             <p>
               Our purpose is to democratize the benefits of emerging data and AI, ensuring that 
               individuals, businesses, and governments can harness these technologies to solve 
@@ -47,7 +47,7 @@ export const AboutPage: React.FC = () => {
               </svg>
             </div>
             <h3>Our Vision</h3>
-            <span className="about-card-subtitle">WHAT WE ASPIRE TO</span>
+            <span className="about-card-subtitle">What We Aspire To</span>
             <p>
               We envision a future in which everyone is AI-literate and able to use autonomous, 
               ethical AI systems to drive growth and solve societal challenges. In that future, 
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
       {/* 3. Three Pillars (Mission) Section */}
       <section className="about-pillars-section container reveal-on-scroll">
         <div className="text-center section-header-wrap">
-          <span className="section-subtitle">OUR ROADMAP</span>
+          <span className="section-subtitle">Our Roadmap</span>
           <h2 className="section-title">Three Pillars of Our Mission</h2>
           <div className="title-underline center"></div>
           <p className="section-intro">
@@ -104,7 +104,7 @@ export const AboutPage: React.FC = () => {
       {/* 4. Leadership Team Section */}
       <section className="about-team-section container reveal-on-scroll">
         <div className="text-center section-header-wrap">
-          <span className="section-subtitle">OUR LEADERSHIP</span>
+          <span className="section-subtitle">Our Leadership</span>
           <h2 className="section-title">Meet Our Team</h2>
           <div className="title-underline center"></div>
           <p className="section-intro">

@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
         
         {/* Section Header matching site theme */}
         <div className="footer-header">
-          <span className="footer-subtitle">OUR PRESENCE</span>
+          <span className="footer-subtitle">Our Presence</span>
           <h2 className="footer-title">Visit Our Offices</h2>
           <div className="footer-header-line"></div>
         </div>
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
                 {/* Column 1: Badge & Title */}
                 <div className="footer-col company-col">
                   <div className="center-header-row">
-                    <span className="center-badge teal">DUBAI</span>
+                    <span className="center-badge teal">Dubai</span>
                     <div className="center-icon-wrapper teal">
                       <svg className="center-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
         {/* Footer Bottom copyright matching site layout */}
         <div className="footer-bottom-bar">
           <p className="footer-copyright-text">
-            COPYRIGHT © 2026 AGENTIFY AI GLOBAL
+            Copyright © 2026 Agentify AI Global
           </p>
         </div>
 

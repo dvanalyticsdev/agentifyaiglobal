@@ -11,7 +11,7 @@ export const BenefitsSection: React.FC = () => {
         
         {/* Title Header */}
         <div className="benefits-header reveal-on-scroll">
-          <span className="benefits-subtitle">MAXIMIZE YOUR SUCCESS</span>
+          <span className="benefits-subtitle">Maximize Your Success</span>
           <h2 className="benefits-title">
             {activeTab === 'program' ? 'Program Benefits' : 'LMS Platform Benefits'}
           </h2>

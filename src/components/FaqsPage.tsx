@@ -299,7 +299,7 @@ export const FaqsPage: React.FC<FaqsPageProps> = ({ onEnroll }) => {
     <div className="faq-page-wrapper">
       {/* 1. FAQs Header */}
       <section className="faq-hero container text-center">
-        <span className="faq-subtitle">LEARNER SUPPORT</span>
+        <span className="faq-subtitle">Learner Support</span>
         <h1 className="faq-title">Frequently Asked Questions</h1>
         <div className="faq-header-line"></div>
         <p className="faq-hero-desc">

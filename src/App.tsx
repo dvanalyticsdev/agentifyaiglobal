@@ -150,7 +150,7 @@ function App() {
         <div className="page-wrapper container">
           <section className="content-section" style={{ padding: '5rem 2rem', textAlign: 'center' }}>
             <h2 style={{ fontSize: '2.75rem', marginBottom: '1.5rem', color: '#0f172a', fontWeight: '800', letterSpacing: '-0.75px' }}>
-              BLOGS
+              Blogs
             </h2>
             <div style={{ height: '4px', width: '60px', backgroundColor: '#0284c7', margin: '0 auto 2.5rem auto' }}></div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '3rem', fontWeight: '500' }}>
@@ -169,7 +169,7 @@ function App() {
         <div className="page-wrapper container">
           <section className="content-section" style={{ padding: '3.5rem', textAlign: 'center' }}>
             <h2 style={{ fontSize: '2.25rem', marginBottom: '1.5rem', color: '#000000', fontWeight: '800' }}>
-              {activePage.toUpperCase()}
+              {activePage.charAt(0).toUpperCase() + activePage.slice(1)}
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '2.5rem', fontWeight: '300' }}>
               This section is currently under development.

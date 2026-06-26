@@ -238,7 +238,7 @@ export const ServicesPage: React.FC = () => {
       <section className="services-hero">
         <div className="services-hero-overlay"></div>
         <div className="container services-hero-content text-center">
-          <span className="services-subtitle">SERVICES & CAPABILITIES</span>
+          <span className="services-subtitle">Services & Capabilities</span>
           <h1 className="services-title">Enterprise AI & Consulting</h1>
           <div className="vision-quote-card">
             <svg viewBox="0 0 24 24" className="quote-icon-top">
@@ -254,7 +254,7 @@ export const ServicesPage: React.FC = () => {
       {/* 2. Enterprise AI Solutions Grid */}
       <section className="services-section container">
         <div className="section-header text-center">
-          <span className="section-subtitle">SCALABLE APPLICATIONS</span>
+          <span className="section-subtitle">Scalable Applications</span>
           <h2>Enterprise AI Solutions</h2>
           <div className="title-underline center"></div>
           <p className="section-desc-para">
@@ -281,7 +281,7 @@ export const ServicesPage: React.FC = () => {
       <section className="services-section agentic-solutions-bg">
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-subtitle">AUTONOMOUS DECISION MAKING</span>
+            <span className="section-subtitle">Autonomous Decision Making</span>
             <h2 style={{ color: '#ffffff' }}>Agentic AI Solutions</h2>
             <div className="title-underline center" style={{ backgroundColor: '#db2777' }}></div>
             <p className="section-desc-para" style={{ color: '#cbd5e1' }}>
@@ -304,7 +304,7 @@ export const ServicesPage: React.FC = () => {
       {/* 4. Enterprise AI Technology Stack */}
       <section className="services-section container">
         <div className="section-header text-center">
-          <span className="section-subtitle">ARCHITECTURE LAYERS</span>
+          <span className="section-subtitle">Architecture Layers</span>
           <h2>Enterprise AI Technology Stack</h2>
           <div className="title-underline center"></div>
           <p className="section-desc-para">
@@ -329,7 +329,7 @@ export const ServicesPage: React.FC = () => {
       <section className="services-section services-consulting-bg">
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-subtitle">TRANSFORMATION PARTNERS</span>
+            <span className="section-subtitle">Transformation Partners</span>
             <h2>AI Consulting & Advisory Services</h2>
             <div className="title-underline center"></div>
             <p className="section-desc-para" style={{ color: '#cbd5e1' }}>
@@ -356,7 +356,7 @@ export const ServicesPage: React.FC = () => {
       {/* 6. Target Industries & Sectors */}
       <section className="services-section container text-center">
         <div className="section-header">
-          <span className="section-subtitle">SECTORS SERVED</span>
+          <span className="section-subtitle">Sectors Served</span>
           <h2>Target Industries</h2>
           <div className="title-underline center"></div>
           <p className="section-desc-para">

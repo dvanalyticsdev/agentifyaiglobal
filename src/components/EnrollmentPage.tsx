@@ -98,7 +98,7 @@ export const EnrollmentPage: React.FC<EnrollmentPageProps> = ({ onBackHome, defa
       
       {/* 1. Page Header */}
       <section className="enroll-hero container text-center reveal-on-scroll">
-        <span className="enroll-subtitle">ADMISSIONS OPEN</span>
+        <span className="enroll-subtitle">Admissions Open</span>
         <h1 className="enroll-title">Start Your Tech Journey</h1>
         <div className="enroll-header-line"></div>
         <p className="enroll-hero-desc">

@@ -88,7 +88,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       <div className="page-wrapper container">
         <section className="content-section" style={{ padding: '3.5rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.25rem', marginBottom: '1.5rem', color: '#ef4444', fontWeight: '800' }}>
-            COURSE NOT FOUND
+            Course Not Found
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
             The requested course page for <strong>{courseId}</strong> does not exist.
@@ -234,7 +234,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       <section className="course-overview-section container reveal-on-scroll">
         <div className="overview-split">
           <div className="overview-left">
-            <h2 className="section-title">PROGRAM OVERVIEW</h2>
+            <h2 className="section-title">Program Overview</h2>
             <div className="title-underline"></div>
             <p className="overview-text">{course.overview}</p>
             
@@ -340,8 +340,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       {/* 5. Industry Projects - Grouped by Domain */}
       <section className="course-projects-section industry-projects-section container reveal-on-scroll">
         <div className="projects-header text-center">
-          <span className="section-subtitle">PRACTICAL PORTFOLIO</span>
-          <h2 className="section-title">INDUSTRY PROJECTS</h2>
+          <span className="section-subtitle">Practical Portfolio</span>
+          <h2 className="section-title">Industry Projects</h2>
           <div className="title-underline center"></div>
           <p className="projects-intro">
             Build and deploy enterprise-level solutions designed around active industry scenarios.
@@ -388,8 +388,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       {/* 6. Career Pathways & Roles */}
       <section className="course-careers-section container reveal-on-scroll">
         <div className="careers-header text-center">
-          <span className="section-subtitle">FUTURE PROGRESSION</span>
-          <h2 className="section-title">CAREER OPPORTUNITIES</h2>
+          <span className="section-subtitle">Future Progression</span>
+          <h2 className="section-title">Career Opportunities</h2>
           <div className="title-underline center"></div>
         </div>
 
@@ -433,8 +433,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       {/* 7. Program Outcome */}
       <section className="program-outcome-section container reveal-on-scroll">
         <div className="text-center">
-          <span className="section-subtitle">MEASURABLE RESULTS</span>
-          <h2 className="section-title">PROGRAM OUTCOME</h2>
+          <span className="section-subtitle">Measurable Results</span>
+          <h2 className="section-title">Program Outcome</h2>
           <div className="title-underline center"></div>
         </div>
 
@@ -456,8 +456,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       {/* 8. Career Advantage */}
       <section className="career-advantage-section container reveal-on-scroll">
         <div className="text-center">
-          <span className="section-subtitle">YOUR COMPETITIVE EDGE</span>
-          <h2 className="section-title">CAREER ADVANTAGE</h2>
+          <span className="section-subtitle">Your Competitive Edge</span>
+          <h2 className="section-title">Career Advantage</h2>
           <div className="title-underline center"></div>
         </div>
 
@@ -475,8 +475,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
       {course.certifications && course.certifications.length > 0 && (
         <section className="certifications-section container reveal-on-scroll">
           <div className="text-center">
-            <span className="section-subtitle">INDUSTRY RECOGNITION</span>
-            <h2 className="section-title">CERTIFICATIONS ALIGNMENT</h2>
+            <span className="section-subtitle">Industry Recognition</span>
+            <h2 className="section-title">Certifications Alignment</h2>
             <div className="title-underline center"></div>
           </div>
 

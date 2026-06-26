@@ -46,7 +46,7 @@ export const SuccessStories: React.FC = () => {
         
         {/* Title Header */}
         <div className="stories-header">
-          <span className="stories-subtitle">PROVEN RESULTS</span>
+          <span className="stories-subtitle">Proven Results</span>
           <h2 className="stories-title">Student Success Stories</h2>
           <div className="stories-header-line"></div>
         </div>
