@@ -11,7 +11,7 @@ export const RoadmapSection: React.FC = () => {
         <div className="programs-section-header">
           <div className="section-title-wrapper">
             <h2 className="section-title-divider">
-              A COMPLETE ROAD MAP FOR DATA SCIENTISTS AND CYBER SPECIALIST
+              A Complete Road Map for Data Scientists and Cyber Specialist
             </h2>
           </div>
         </div>
