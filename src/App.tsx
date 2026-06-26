@@ -195,7 +195,7 @@ function App() {
               </h2>
               
               <p className="hero-desc">
-                GET YOUR EMPLOYMENT WITH INDUSTRY READY SKILLS TODAY.
+                Get your employment with industry ready skills today.
               </p>
             </div>
 
