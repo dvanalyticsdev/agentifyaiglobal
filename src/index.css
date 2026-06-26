@@ -4705,6 +4705,7 @@ a {
 }
 
 .faq-tab-btn {
+  font-family: inherit;
   background: transparent;
   border: none;
   border-radius: 14px;
@@ -4791,6 +4792,7 @@ a {
 }
 
 .faq-question-btn {
+  font-family: inherit;
   width: 100%;
   background: transparent;
   border: none;
