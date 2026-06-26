@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface HeaderProps {
   onNavClick?: (page: string) => void;
@@ -8,7 +8,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
 
   const coursesList = [
     { id: 'course-apids', label: 'Advanced Program in Industrial Data Science & AI (APIDS)' },
@@ -29,7 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.dropdown-container')) {
         setDropdownOpen(false);
       }
     };
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
 
   const renderNavList = () => (
     <ul className="nav-list">
-      <li className="nav-item dropdown-container" ref={dropdownRef}>
+      <li className="nav-item dropdown-container">
         <a
           href="#courses"
           className={`dropdown-trigger ${dropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
