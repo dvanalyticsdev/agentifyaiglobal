@@ -3,6 +3,16 @@ import React from 'react';
 export const ServicesPage: React.FC = () => {
   const enterpriseSolutions = [
     {
+      title: 'Generative AI Solutions',
+      description: 'Generative AI enables enterprises to automate content creation, proposal writing, report generation, documentation, and intelligent copilots. These solutions significantly improve employee productivity, reduce manual effort, accelerate business processes, enhance creativity, and empower teams with AI-assisted decision-making and knowledge generation capabilities.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+      ),
+      theme: 'magenta'
+    },
+    {
       title: 'AI-Powered Customer Service',
       description: 'Leverage AI chatbots, voice agents, WhatsApp automation, email automation, multilingual support, and intelligent ticket routing to deliver seamless customer experiences. Organizations can provide 24x7 assistance, resolve queries faster, reduce support costs by 60–80%, improve customer satisfaction, and ensure consistent service quality across multiple communication channels.',
       icon: (
@@ -85,17 +95,6 @@ export const ServicesPage: React.FC = () => {
       theme: 'blue'
     },
     {
-      title: 'Manufacturing AI',
-      description: 'Manufacturing organizations use AI for predictive maintenance, quality inspection, production optimization, defect detection, and smart factory operations. These solutions reduce equipment downtime, improve product quality, optimize resource utilization, increase productivity, and enable real-time monitoring for more efficient and cost-effective manufacturing processes.',
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M12 2v20M2 12h20" />
-        </svg>
-      ),
-      theme: 'purple'
-    },
-    {
       title: 'Cybersecurity AI',
       description: 'AI-powered cybersecurity solutions provide proactive threat detection, continuous security monitoring, incident response automation, fraud investigation, and cyber forensics. Organizations strengthen their security posture, reduce response times, identify vulnerabilities quickly, prevent cyberattacks, and protect critical business assets from evolving digital threats.',
       icon: (
@@ -104,16 +103,6 @@ export const ServicesPage: React.FC = () => {
         </svg>
       ),
       theme: 'teal'
-    },
-    {
-      title: 'Generative AI Solutions',
-      description: 'Generative AI enables enterprises to automate content creation, proposal writing, report generation, documentation, and intelligent copilots. These solutions significantly improve employee productivity, reduce manual effort, accelerate business processes, enhance creativity, and empower teams with AI-assisted decision-making and knowledge generation capabilities.',
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-        </svg>
-      ),
-      theme: 'magenta'
     }
   ];
 

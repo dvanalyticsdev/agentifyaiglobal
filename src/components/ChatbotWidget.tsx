@@ -37,6 +37,19 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
   const [relativeMouse, setRelativeMouse] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    const syncMobileState = () => {
+      setIsMinimized(window.innerWidth <= 768);
+    };
+
+    syncMobileState();
+    window.addEventListener('resize', syncMobileState);
+
+    return () => {
+      window.removeEventListener('resize', syncMobileState);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isOpen) return;
 
     const handleMouseMove = (e: MouseEvent) => {

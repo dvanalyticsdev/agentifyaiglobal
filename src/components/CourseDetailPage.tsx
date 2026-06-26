@@ -310,7 +310,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
           {course.industryProjects.map((domain, idx) => (
             <div key={idx} className="domain-card">
               <div className="domain-card-header">
-                <span className="domain-icon">🏢</span>
                 <h3 className="domain-title">{domain.domain}</h3>
               </div>
               <div className="domain-projects-list">

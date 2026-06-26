@@ -102,9 +102,9 @@ const siteSections = [
     title: 'Services and enterprise AI',
     keywords: ['services', 'enterprise', 'consulting', 'solution', 'business', 'automation', 'agent', 'sales agent', 'hr agent', 'collections agent', 'customer success agent', 'student relationship agent'],
     summary:
-      'The Services page covers 10 enterprise AI solutions, 5 agentic AI solutions, consulting/development/training/support services, target industries, and the technology stack layers.',
+      'The Services page covers 9 enterprise AI solutions, 5 agentic AI solutions, consulting/development/training/support services, target industries, and the technology stack layers.',
     highlights: [
-      'Enterprise AI Solutions: AI-Powered Customer Service (chatbots, voice/WhatsApp/email automation), Sales & Marketing AI, Enterprise Knowledge Assistant (internal ChatGPT for policies/contracts), AI-Powered HR, Finance & Risk Analytics (fraud detection, revenue forecasting), Supply Chain AI, Healthcare AI, Manufacturing AI, Cybersecurity AI, and Generative AI Solutions.',
+      'Enterprise AI Solutions: Generative AI Solutions, AI-Powered Customer Service (chatbots, voice/WhatsApp/email automation), Sales & Marketing AI, Enterprise Knowledge Assistant (internal ChatGPT for policies/contracts), AI-Powered HR, Finance & Risk Analytics (fraud detection, revenue forecasting), Supply Chain AI, Healthcare AI, and Cybersecurity AI.',
       'Autonomous Agentic AI Solutions: Sales Agent (lead qualification, CRM updates), Student Relationship Agent (feedback collection, tracking progress), Collections Agent (EMI reminders, recovery workflows), HR Agent (screening, query management), and Customer Success Agent (complaint tracking, retention).',
       'Consulting & Advisory Services: Strategic consulting, custom development, training (Enterprise AI upskilling, Generative/Agentic AI workshops), and operational support (model monitoring, managed AI services).',
       'Technology Stack Layers: Operations (MLOps, LLMOps), Deployment (AWS, Azure, GCP, Docker, Kubernetes), Agentic AI (Multi-Agent Systems), AI (Python, ML, DL, NLP, GenAI), Analytics (Excel+AI, Power BI, Tableau), Data (SQL Server, PostgreSQL, MySQL, Snowflake, Databricks).',

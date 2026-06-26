@@ -10,7 +10,7 @@ interface RobotSpeechBubblesProps {
 }
 
 const welcomeMessage =
-  'Hey, I am EVA have any doubts or issue chat with me';
+  'Hi, I am EVA. Tap here if you need help with courses or the site.';
 
 export const RobotSpeechBubbles: React.FC<RobotSpeechBubblesProps> = ({
   onClick,

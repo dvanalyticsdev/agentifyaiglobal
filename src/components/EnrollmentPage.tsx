@@ -145,7 +145,6 @@ export const EnrollmentPage: React.FC<EnrollmentPageProps> = ({ onBackHome, defa
 
               <div className="enroll-features-list">
                 <div className="enroll-feature-item">
-                  <div className="feat-icon">🎓</div>
                   <div className="feat-text">
                     <h4>Industry Expert Mentors</h4>
                     <p>Learn directly from senior practitioners with decade-long experience in Data Science, AI, and Cybersecurity.</p>
@@ -153,7 +152,6 @@ export const EnrollmentPage: React.FC<EnrollmentPageProps> = ({ onBackHome, defa
                 </div>
 
                 <div className="enroll-feature-item">
-                  <div className="feat-icon">💼</div>
                   <div className="feat-text">
                     <h4>Dynamic Career Support</h4>
                     <p>Gain access to resume-building guides, interview preparation kits, and mock tests aligned with placements.</p>
@@ -161,7 +159,6 @@ export const EnrollmentPage: React.FC<EnrollmentPageProps> = ({ onBackHome, defa
                 </div>
 
                 <div className="enroll-feature-item">
-                  <div className="feat-icon">💻</div>
                   <div className="feat-text">
                     <h4>Hands-on Laboratory Labs</h4>
                     <p>Practice theoretical concepts in offline cyber ranges, cloud environments, and industry datasets.</p>
@@ -169,7 +166,6 @@ export const EnrollmentPage: React.FC<EnrollmentPageProps> = ({ onBackHome, defa
                 </div>
 
                 <div className="enroll-feature-item">
-                  <div className="feat-icon">📚</div>
                   <div className="feat-text">
                     <h4>Full LMS Platform Access</h4>
                     <p>Access session recordings, assignments, assessments, templates, and learning materials 24/7.</p>

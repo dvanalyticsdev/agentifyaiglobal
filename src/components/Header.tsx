@@ -7,6 +7,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   const coursesList = [
@@ -39,86 +40,147 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
     };
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setDropdownOpen(false);
+  }, [activePage]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleCourseClick = (courseId: string) => {
     setDropdownOpen(false);
+    setMobileMenuOpen(false);
     if (onNavClick) {
       onNavClick(courseId);
     }
   };
 
+  const renderNavList = () => (
+    <ul className="nav-list">
+      <li className="nav-item dropdown-container" ref={dropdownRef}>
+        <a
+          href="#courses"
+          className={`dropdown-trigger ${dropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            setDropdownOpen(!dropdownOpen);
+          }}
+        >
+          All Courses
+          <svg className={`chevron-icon ${dropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </a>
+
+        <div className={`courses-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+          {coursesList.map((course) => (
+            <a
+              key={course.id}
+              href={`#${course.id}`}
+              className="dropdown-item-link"
+              onClick={(e) => {
+                e.preventDefault();
+                handleCourseClick(course.id);
+              }}
+            >
+              {course.label}
+            </a>
+          ))}
+        </div>
+      </li>
+
+      {navItems.map((item) => (
+        <li key={item.id} className="nav-item">
+          <a
+            href={`#${item.id}`}
+            className={activePage === item.id ? 'active' : ''}
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              if (onNavClick) onNavClick(item.id);
+            }}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <header className="site-header" data-section="header">
       <div className="header-container">
-        <a href="/" className="logo-link" onClick={(e) => {
-          e.preventDefault();
-          if (onNavClick) onNavClick('home');
-        }}>
-          <img src="/logo.png" alt="Agentify AI Logo" className="logo-image" />
-        </a>
-        
-        <nav className="nav-panel">
-          <ul className="nav-list">
-            
-            {/* All Courses Dropdown */}
-            <li className="nav-item dropdown-container" ref={dropdownRef}>
-              <a
-                href="#courses"
-                className={`dropdown-trigger ${dropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setDropdownOpen(!dropdownOpen);
-                }}
-              >
-                All Courses
-                <svg className={`chevron-icon ${dropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
+        <div className="desktop-header-row">
+          <a href="/" className="logo-link" onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            if (onNavClick) onNavClick('home');
+          }}>
+            <img src="/logo.png" alt="Agentify AI Logo" className="logo-image" />
+          </a>
 
-              {/* Dropdown Menu */}
-              <div className={`courses-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                {coursesList.map((course) => (
-                  <a
-                    key={course.id}
-                    href={`#${course.id}`}
-                    className="dropdown-item-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleCourseClick(course.id);
-                    }}
-                  >
-                    {course.label}
-                  </a>
-                ))}
-              </div>
-            </li>
+          <nav className="nav-panel desktop-nav-panel">
+            {renderNavList()}
+          </nav>
 
-            {/* Other Nav Items */}
-            {navItems.map((item) => (
-              <li key={item.id} className="nav-item">
-                <a
-                  href={`#${item.id}`}
-                  className={activePage === item.id ? 'active' : ''}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onNavClick) onNavClick(item.id);
-                  }}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <button
+            className="btn-enroll-header"
+            onClick={() => {
+              if (onNavClick) onNavClick('enroll');
+            }}
+          >
+            Enroll Now
+          </button>
+        </div>
 
-        <button 
-          className="btn-enroll-header"
-          onClick={() => {
-            if (onNavClick) onNavClick('enroll');
-          }}
-        >
-          Enroll Now
-        </button>
+        <div className="mobile-header-stack">
+          <div className="header-brand-row">
+            <a href="/" className="logo-link" onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              if (onNavClick) onNavClick('home');
+            }}>
+              <img src="/logo.png" alt="Agentify AI Logo" className="logo-image" />
+            </a>
+          </div>
+
+          <div className="header-top-row">
+            <button
+              type="button"
+              className="nav-toggle-btn"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <button
+              className="btn-enroll-header btn-enroll-desktop"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onNavClick) onNavClick('enroll');
+              }}
+            >
+              Enroll Now
+            </button>
+          </div>
+
+          <nav className={`nav-panel mobile-nav-panel ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            {renderNavList()}
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -83,10 +83,9 @@ export const AnimatedHeroGraphic: React.FC<AnimatedHeroGraphicProps> = ({ images
               key={index} 
               className={`slideshow-slide ${isActive ? 'active' : ''}`}
             >
-              {/* Foreground sharp image */}
-              <img 
-                src={image} 
-                alt={`Hero Story ${index + 1}`} 
+              <img
+                src={image}
+                alt={`Hero Story ${index + 1}`}
                 className="slide-image-foreground"
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
