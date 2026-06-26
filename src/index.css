@@ -1743,7 +1743,7 @@ a {
   .section-title-divider::after {
     bottom: -4px;
     height: 3px;
-    width: 76%;
+    width: 58%;
   }
 
   .program-card {
@@ -2511,7 +2511,7 @@ a {
   .roadmap-section .section-title-divider::after {
     bottom: -4px;
     height: 3px;
-    width: 72%;
+    width: 54%;
   }
 }
 
@@ -4087,6 +4087,23 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .career-card-top.mobile-collapsible-trigger {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  .career-roles-list {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+
+  .career-roles-list.mobile-collapsed {
+    max-height: 0;
+  }
+}
+
 .career-path-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -4111,6 +4128,14 @@ a {
   margin-bottom: 1.75rem;
   border-bottom: 2px solid #f1f5f9;
   padding-bottom: 1rem;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: #0f172a;
 }
 
 .career-level {
@@ -4134,6 +4159,12 @@ a {
   gap: 1rem;
 }
 
+.career-roles-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .career-role-item {
   display: flex;
   align-items: center;
@@ -4150,6 +4181,42 @@ a {
   font-size: 0.92rem;
   color: #475569;
   font-weight: 500;
+}
+
+.mobile-collapsible-icon {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  opacity: 0.95;
+}
+
+.mobile-collapsible-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+.mobile-collapsible-icon.is-open {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .career-card-top.mobile-collapsible-trigger {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  .career-roles-list {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+
+  .career-roles-list.mobile-collapsed {
+    max-height: 0;
+  }
 }
 
 /* 8. Bottom CTA Section */
@@ -4235,6 +4302,16 @@ a {
   .course-hero-title {
     font-size: 2.25rem;
   }
+
+  .course-overview-section .overview-left .section-title {
+    text-align: center;
+  }
+
+  .course-overview-section .overview-left .title-underline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .course-hero-tagline {
     font-size: 1.1rem;
     margin-bottom: 2rem;
@@ -4303,6 +4380,25 @@ a {
   .industry-domains-grid {
     grid-template-columns: 1fr;
   }
+
+  .domain-card-header.mobile-collapsible-trigger {
+    cursor: pointer;
+  }
+
+  .domain-projects-list {
+    padding: 0;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+
+  .domain-projects-list.mobile-collapsed {
+    max-height: 0;
+  }
+
+  .domain-projects-inner {
+    padding: 1.75rem 2rem;
+  }
 }
 
 .domain-card {
@@ -4325,7 +4421,13 @@ a {
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.85rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font: inherit;
+  color: #ffffff;
 }
 
 .domain-icon {
@@ -4341,6 +4443,12 @@ a {
 
 .domain-projects-list {
   padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.domain-projects-inner {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -4365,6 +4473,27 @@ a {
   color: #475569;
   line-height: 1.45;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .domain-card-header.mobile-collapsible-trigger {
+    cursor: pointer;
+  }
+
+  .domain-projects-list {
+    padding: 0;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+
+  .domain-projects-list.mobile-collapsed {
+    max-height: 0;
+  }
+
+  .domain-projects-inner {
+    padding: 1.75rem 2rem;
+  }
 }
 
 /* ================================================

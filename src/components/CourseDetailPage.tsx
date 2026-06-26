@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { coursesData } from '../data/coursesData';
 import { useMagneticEffect } from '../hooks/useMagneticEffect';
 import { AnimatedHeroGraphic } from './AnimatedHeroGraphic';
@@ -73,6 +73,11 @@ interface CourseDetailPageProps {
 export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, onBackHome, onEnroll }) => {
   const course = coursesData[courseId.toUpperCase()];
   const [expandedModule, setExpandedModule] = useState<number | null>(0);
+  const [isMobileView, setIsMobileView] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+  );
+  const [expandedProjectDomains, setExpandedProjectDomains] = useState<number[]>([]);
+  const [expandedCareerGroups, setExpandedCareerGroups] = useState<number[]>([]);
   const hasPlacementSupport = ['apids', 'apida', 'aiml'].includes(courseId.toLowerCase());
 
   const heroEnrollRef = useMagneticEffect(0.25);
@@ -98,6 +103,43 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
 
   const toggleModule = (index: number) => {
     setExpandedModule(expandedModule === index ? null : index);
+  };
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const syncViewport = (matches: boolean) => {
+      setIsMobileView(matches);
+    };
+
+    syncViewport(mediaQuery.matches);
+
+    const handleViewportChange = (event: MediaQueryListEvent) => {
+      syncViewport(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleViewportChange);
+    return () => mediaQuery.removeEventListener('change', handleViewportChange);
+  }, []);
+
+  useEffect(() => {
+    setExpandedProjectDomains([]);
+    setExpandedCareerGroups([]);
+  }, [courseId]);
+
+  const toggleProjectDomain = (index: number) => {
+    if (!isMobileView) return;
+
+    setExpandedProjectDomains((current) =>
+      current.includes(index) ? current.filter((item) => item !== index) : [...current, index]
+    );
+  };
+
+  const toggleCareerGroup = (index: number) => {
+    if (!isMobileView) return;
+
+    setExpandedCareerGroups((current) =>
+      current.includes(index) ? current.filter((item) => item !== index) : [...current, index]
+    );
   };
 
   return (
@@ -307,21 +349,39 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         </div>
 
         <div className="industry-domains-grid">
-          {course.industryProjects.map((domain, idx) => (
-            <div key={idx} className="domain-card">
-              <div className="domain-card-header">
+          {course.industryProjects.map((domain, idx) => {
+            const isExpanded = !isMobileView || expandedProjectDomains.includes(idx);
+
+            return (
+            <div key={idx} className={`domain-card ${isExpanded ? 'mobile-expanded' : 'mobile-collapsed'}`}>
+              <button
+                type="button"
+                className={`domain-card-header ${isMobileView ? 'mobile-collapsible-trigger' : ''}`}
+                onClick={() => toggleProjectDomain(idx)}
+                aria-expanded={isExpanded}
+              >
                 <h3 className="domain-title">{domain.domain}</h3>
-              </div>
-              <div className="domain-projects-list">
+                {isMobileView && (
+                  <span className={`mobile-collapsible-icon ${isExpanded ? 'is-open' : ''}`} aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                )}
+              </button>
+              <div className={`domain-projects-list ${isExpanded ? 'mobile-expanded' : 'mobile-collapsed'}`}>
+                <div className="domain-projects-inner">
                 {domain.projects.map((project, pIdx) => (
                   <div key={pIdx} className="domain-project-item">
                     <span className="domain-project-bullet">▸</span>
                     <span>{project}</span>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -334,21 +394,39 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({ courseId, on
         </div>
 
         <div className="career-path-grid">
-          {course.careers.map((career, idx) => (
-            <div key={idx} className="career-path-card">
-              <div className="career-card-top">
+          {course.careers.map((career, idx) => {
+            const isExpanded = !isMobileView || expandedCareerGroups.includes(idx);
+
+            return (
+            <div key={idx} className={`career-path-card ${isExpanded ? 'mobile-expanded' : 'mobile-collapsed'}`}>
+              <button
+                type="button"
+                className={`career-card-top ${isMobileView ? 'mobile-collapsible-trigger' : ''}`}
+                onClick={() => toggleCareerGroup(idx)}
+                aria-expanded={isExpanded}
+              >
                 <span className="career-level">{career.level}</span>
-              </div>
-              <div className="career-roles-list">
+                {isMobileView && (
+                  <span className={`mobile-collapsible-icon ${isExpanded ? 'is-open' : ''}`} aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                )}
+              </button>
+              <div className={`career-roles-list ${isExpanded ? 'mobile-expanded' : 'mobile-collapsed'}`}>
+                <div className="career-roles-inner">
                 {career.roles.map((role, rIdx) => (
                   <div key={rIdx} className="career-role-item">
                     <span className="role-bullet-check">✔</span>
                     <span>{role}</span>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
