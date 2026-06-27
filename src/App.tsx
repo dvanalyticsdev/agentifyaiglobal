@@ -193,9 +193,13 @@ function App() {
         <section className="content-section" data-section="hero">
           <div className="hero-split">
             <div className="hero-left">
-              <h1 className="hero-heading-pro">
-                Master Data Science, Data Analytics, Generative AI, Agentic AI & Cybersecurity
+              <span className="hero-heading-become">Master</span>
+              <h1 className="hero-heading-accent" style={{ marginBottom: '0.35rem' }}>
+                Data Science, Data Analytics,
               </h1>
+              <h2 className="hero-heading-accent">
+                Generative AI, Agentic AI & Cybersecurity
+              </h2>
               
               <p className="hero-desc">
                 Your Path to High-Paying Careers, Industry Leadership, and Global Opportunities
