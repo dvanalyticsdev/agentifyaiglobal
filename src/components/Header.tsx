@@ -6,7 +6,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const coursesList = [
@@ -18,12 +19,22 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
     { id: 'course-apcs', label: 'Advanced Program in Cybersecurity & Forensics (APCF)' }
   ];
 
+  const servicesList = [
+    { id: 'aau', label: 'Agentify AI University (AAU)' },
+    { id: 'ais', label: 'Agentify Intelligence Solutions (AIS)' },
+    { id: 'aap', label: 'Agentify Advisory Practice (AAP)' },
+    { id: 'aeipp', label: 'Agentic Economic Intelligence & Policy Practice (AEIPP)' }
+  ];
+
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.dropdown-container')) {
-        setDropdownOpen(false);
+      if (!target.closest('.courses-dropdown-container')) {
+        setCoursesDropdownOpen(false);
+      }
+      if (!target.closest('.services-dropdown-container')) {
+        setServicesDropdownOpen(false);
       }
     };
 
@@ -35,7 +46,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
+    setCoursesDropdownOpen(false);
+    setServicesDropdownOpen(false);
   }, [activePage]);
 
   useEffect(() => {
@@ -50,52 +62,89 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
   }, []);
 
   const handleCourseClick = (courseId: string) => {
-    setDropdownOpen(false);
+    setCoursesDropdownOpen(false);
     setMobileMenuOpen(false);
     if (onNavClick) {
       onNavClick(courseId);
     }
   };
 
+  const handleServiceClick = (serviceId: string) => {
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    if (onNavClick) {
+      if (serviceId === 'aau') {
+        onNavClick('course-apids');
+      } else {
+        onNavClick('services');
+      }
+    }
+  };
+
   const renderNavList = () => (
     <ul className="nav-list">
-      <li className="nav-item">
+      <li 
+        className="nav-item dropdown-container services-dropdown-container"
+        onMouseEnter={() => {
+          if (window.innerWidth > 768) {
+            setServicesDropdownOpen(true);
+          }
+        }}
+      >
         <a
           href="#services"
-          className={activePage === 'services' ? 'active' : ''}
+          className={`dropdown-trigger ${servicesDropdownOpen ? 'open' : ''} ${activePage === 'services' ? 'active' : ''}`}
           onClick={(e) => {
             e.preventDefault();
-            setMobileMenuOpen(false);
-            if (onNavClick) onNavClick('services');
+            setServicesDropdownOpen(!servicesDropdownOpen);
           }}
         >
           Services
+          <svg className={`chevron-icon ${servicesDropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </a>
+
+        <div className={`services-dropdown-menu ${servicesDropdownOpen ? 'show' : ''}`}>
+          {servicesList.map((service) => (
+            <a
+              key={service.id}
+              href={`#${service.id}`}
+              className="dropdown-item-link"
+              onClick={(e) => {
+                e.preventDefault();
+                handleServiceClick(service.id);
+              }}
+            >
+              {service.label}
+            </a>
+          ))}
+        </div>
       </li>
 
       <li 
-        className="nav-item dropdown-container"
+        className="nav-item dropdown-container courses-dropdown-container"
         onMouseEnter={() => {
           if (window.innerWidth > 768) {
-            setDropdownOpen(true);
+            setCoursesDropdownOpen(true);
           }
         }}
       >
         <a
           href="#courses"
-          className={`dropdown-trigger ${dropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
+          className={`dropdown-trigger ${coursesDropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
           onClick={(e) => {
             e.preventDefault();
-            setDropdownOpen(!dropdownOpen);
+            setCoursesDropdownOpen(!coursesDropdownOpen);
           }}
         >
           AI Academy Programs
-          <svg className={`chevron-icon ${dropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
+          <svg className={`chevron-icon ${coursesDropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </a>
 
-        <div className={`courses-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+        <div className={`courses-dropdown-menu ${coursesDropdownOpen ? 'show' : ''}`}>
           {coursesList.map((course) => (
             <a
               key={course.id}

@@ -1,6 +1,113 @@
 import React from 'react';
 
 export const ServicesPage: React.FC = () => {
+  const coreOfferings = [
+    {
+      title: "Agentify AI\nUniversity (AAU)",
+      description: "Empowering everyone for the AI era AAU delivers accessible, mentor-led learning in Data, AI, Generative AI, and Agentic AI for learners at every stage of life. Programs combine online and offline delivery, hands-on capstones, roadshows, and hackathons. In partnership with DV Analytics India",
+      icon: (
+        <svg viewBox="0 0 64 64" className="practice-card-icon" fill="none">
+          <circle cx="32" cy="32" r="30" fill="url(#blue-grad-bg)" opacity="0.1" />
+          <path d="M12 24L32 14L52 24L32 34L12 24Z" fill="url(#blue-grad)" />
+          <path d="M50 25V39C50 39.5 49 40 47 40" stroke="url(#blue-grad)" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M20 33.5V41C20 45 25 47 32 47C39 47 44 45 44 41V33.5" stroke="url(#blue-grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M22 41C22 41 26 43 32 43C38 43 42 41 42 41" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+          
+          <defs>
+            <linearGradient id="blue-grad" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0ea5e9" />
+              <stop offset="100%" stopColor="#0369a1" />
+            </linearGradient>
+            <linearGradient id="blue-grad-bg" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#0284c7" />
+            </linearGradient>
+          </defs>
+        </svg>
+      )
+    },
+    {
+      title: "Agentify Intelligence\nSolutions (AIS)",
+      description: "Intelligence at work, autonomy at scale AIS provides agentic AI SaaS products for banking and payments, embedding real-time and offline intelligence across risk, marketing, operations, and growth workflows to drive efficiency and revenue.",
+      icon: (
+        <svg viewBox="0 0 64 64" className="practice-card-icon" fill="none">
+          <circle cx="32" cy="32" r="30" fill="url(#blue-grad-bg-2)" opacity="0.1" />
+          <rect x="12" y="16" width="40" height="28" rx="3" stroke="url(#blue-grad-2)" strokeWidth="2.5" />
+          <path d="M24 44V50H40V44" stroke="url(#blue-grad-2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20 50H44" stroke="url(#blue-grad-2)" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="25" cy="27" r="4" stroke="url(#blue-grad-2)" strokeWidth="2" />
+          <path d="M25 21V23M25 31V33M19 27H21M29 27H31" stroke="url(#blue-grad-2)" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M38 34V24M43 34V28M48 34V20" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+          
+          <defs>
+            <linearGradient id="blue-grad-2" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0ea5e9" />
+              <stop offset="100%" stopColor="#0369a1" />
+            </linearGradient>
+            <linearGradient id="blue-grad-bg-2" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#0284c7" />
+            </linearGradient>
+          </defs>
+        </svg>
+      )
+    },
+    {
+      title: "Agentify Advisory\nPractice (AAP)",
+      description: "Shaping strategy for autonomous agents. AAP advises enterprises on AI platform architecture, agentic AI design, data monetisation, governance, and safe adoption to enable scalable, revenue-driven intelligence.",
+      icon: (
+        <svg viewBox="0 0 64 64" className="practice-card-icon" fill="none">
+          <circle cx="32" cy="32" r="30" fill="url(#blue-grad-bg-3)" opacity="0.1" />
+          <circle cx="26" cy="36" r="8" stroke="url(#blue-grad-3)" strokeWidth="2.5" />
+          <path d="M26 25V28M26 44V47M15 36H18M34 36H37M18.5 28.5L20.5 30.5M31.5 41.5L33.5 43.5M18.5 43.5L20.5 41.5M31.5 30.5L33.5 28.5" stroke="url(#blue-grad-3)" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="39" cy="27" r="5" stroke="#38bdf8" strokeWidth="2" />
+          <path d="M22 44L34 32L40 38L52 24" stroke="url(#blue-grad-3)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M44 24H52V32" stroke="url(#blue-grad-3)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          
+          <defs>
+            <linearGradient id="blue-grad-3" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0ea5e9" />
+              <stop offset="100%" stopColor="#0369a1" />
+            </linearGradient>
+            <linearGradient id="blue-grad-bg-3" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#0284c7" />
+            </linearGradient>
+          </defs>
+        </svg>
+      )
+    },
+    {
+      title: "Agentic Economic\nIntelligence & Policy\nPractice (AEIPP)",
+      description: "Intelligence for the digital-era policymaker. AEIPP supports governments and central banks with data-driven insights on digital economies, trade flows, macroeconomic forecasting, and policy simulation for informed decision-making.",
+      icon: (
+        <svg viewBox="0 0 64 64" className="practice-card-icon" fill="none">
+          <circle cx="32" cy="32" r="30" fill="url(#blue-grad-bg-4)" opacity="0.1" />
+          <path d="M12 28L32 16L52 28" stroke="url(#blue-grad-4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 28H48" stroke="url(#blue-grad-4)" strokeWidth="2" strokeLinecap="round" />
+          <rect x="18" y="28" width="4" height="14" fill="url(#blue-grad-4)" />
+          <rect x="26" y="28" width="4" height="14" fill="url(#blue-grad-4)" />
+          <rect x="34" y="28" width="4" height="14" fill="url(#blue-grad-4)" />
+          <rect x="42" y="28" width="4" height="14" fill="url(#blue-grad-4)" />
+          <path d="M14 42H50" stroke="url(#blue-grad-4)" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M10 46H54" stroke="url(#blue-grad-4)" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M36 22L44 14L52 18" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          
+          <defs>
+            <linearGradient id="blue-grad-4" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0ea5e9" />
+              <stop offset="100%" stopColor="#0369a1" />
+            </linearGradient>
+            <linearGradient id="blue-grad-bg-4" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#0284c7" />
+            </linearGradient>
+          </defs>
+        </svg>
+      )
+    }
+  ];
+
   const enterpriseSolutions = [
     {
       title: 'Generative AI Solutions',
@@ -251,7 +358,22 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. Enterprise AI Solutions Grid */}
+      {/* 2. Practices Section */}
+      <section className="practices-section">
+        <div className="container">
+          <div className="practices-grid">
+            {coreOfferings.map((offering, idx) => (
+              <div key={idx} className="practice-card">
+                {offering.icon}
+                <h3 className="practice-card-title">{offering.title}</h3>
+                <p className="practice-card-desc">{offering.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Enterprise AI Solutions Grid */}
       <section className="services-section container">
         <div className="section-header text-center">
           <span className="section-subtitle">Scalable Applications</span>
@@ -277,7 +399,7 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Agentic AI Solutions */}
+      {/* 4. Agentic AI Solutions */}
       <section className="services-section agentic-solutions-bg">
         <div className="container">
           <div className="section-header text-center">
@@ -301,7 +423,7 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. Enterprise AI Technology Stack */}
+      {/* 5. Enterprise AI Technology Stack */}
       <section className="services-section container">
         <div className="section-header text-center">
           <span className="section-subtitle">Architecture Layers</span>
@@ -325,7 +447,7 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Consulting & Upskilling Services */}
+      {/* 6. Consulting & Upskilling Services */}
       <section className="services-section services-consulting-bg">
         <div className="container">
           <div className="section-header text-center">
@@ -353,7 +475,7 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Target Industries & Sectors */}
+      {/* 7. Target Industries & Sectors */}
       <section className="services-section container text-center">
         <div className="section-header">
           <span className="section-subtitle">Sectors Served</span>
