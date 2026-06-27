@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
     setMobileMenuOpen(false);
     if (onNavClick) {
       if (serviceId === 'aau') {
-        onNavClick('course-apids');
+        onNavClick('aau');
       } else {
         onNavClick('services');
       }
@@ -88,6 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
         onMouseEnter={() => {
           if (window.innerWidth > 768) {
             setServicesDropdownOpen(true);
+            setCoursesDropdownOpen(false);
           }
         }}
       >
@@ -127,6 +128,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
         onMouseEnter={() => {
           if (window.innerWidth > 768) {
             setCoursesDropdownOpen(true);
+            setServicesDropdownOpen(false);
           }
         }}
       >

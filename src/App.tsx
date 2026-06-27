@@ -14,6 +14,7 @@ import { AboutPage } from './components/AboutPage';
 import { ChatbotWidget } from './components/ChatbotWidget';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import { CompaniesSection } from './components/CompaniesSection';
+import { AauModal } from './components/AauModal';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
@@ -21,6 +22,7 @@ function App() {
   const [robotPose, setRobotPose] = useState<'idle' | 'wave' | 'programs' | 'benefits' | 'roadmap' | 'footer'>('idle');
   const [robotClicked, setRobotClicked] = useState(false);
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [isAauModalOpen, setIsAauModalOpen] = useState(false);
 
   // Global mousemove-based section detection
   const handleMouseMove = useCallback((e: MouseEvent) => {
@@ -97,7 +99,11 @@ function App() {
   };
 
   const handleNavClick = (pageId: string) => {
-    setActivePage(pageId);
+    if (pageId === 'aau') {
+      setIsAauModalOpen(true);
+    } else {
+      setActivePage(pageId);
+    }
   };
 
   const renderContent = () => {
@@ -187,15 +193,12 @@ function App() {
         <section className="content-section" data-section="hero">
           <div className="hero-split">
             <div className="hero-left">
-              <span className="hero-heading-become">Become an</span>
-              <h1 className="hero-heading-pro">IT Professional</h1>
-              <h2 className="hero-heading-accent">
-                With Data Science,<br />
-                AI & Cybersecurity
-              </h2>
+              <h1 className="hero-heading-pro">
+                Master Data Science, Data Analytics, Generative AI, Agentic AI & Cybersecurity
+              </h1>
               
               <p className="hero-desc">
-                Get your employment with industry ready skills today.
+                Your Path to High-Paying Careers, Industry Leadership, and Global Opportunities
               </p>
             </div>
 
@@ -281,6 +284,14 @@ function App() {
         onRobotClick={handleRobotClick}
         blinkTrigger={blinkTrigger}
         hoveredSection={hoveredSection}
+      />
+      <AauModal
+        isOpen={isAauModalOpen}
+        onClose={() => setIsAauModalOpen(false)}
+        onSelectCourse={(courseId) => {
+          setIsAauModalOpen(false);
+          setActivePage('course-' + courseId);
+        }}
       />
     </div>
   );
