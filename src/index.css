@@ -463,9 +463,6 @@ a {
   }
 
   .mobile-logo-link {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     align-items: center;
   }
@@ -537,7 +534,6 @@ a {
 
   .nav-toggle-btn {
     display: inline-flex;
-    margin-right: auto;
   }
 
   .mobile-enroll-nav-item {
@@ -964,7 +960,7 @@ a {
   }
 
   .hero-image-container {
-    max-width: 320px;
+    max-width: 420px;
     margin: 0 auto;
     animation: none;
   }
@@ -1023,7 +1019,7 @@ a {
   }
 
   .hero-image-container {
-    max-width: 290px;
+    max-width: 370px;
   }
 
   .hero-slideshow-card {
