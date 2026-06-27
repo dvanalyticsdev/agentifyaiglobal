@@ -309,6 +309,8 @@ export const FaqsPage: React.FC<FaqsPageProps> = ({ onEnroll }) => {
 
       {/* 2. FAQs Split Tabs Layout */}
       <section className="faq-content-section container">
+        <h2 className="cat-title-header">{categories[activeCategory].title} FAQs</h2>
+        
         <div className="faq-split-container">
           
           {/* Left Category Navigation Tabs */}
@@ -332,8 +334,6 @@ export const FaqsPage: React.FC<FaqsPageProps> = ({ onEnroll }) => {
 
           {/* Right Accordion Panel */}
           <div className="faq-accordion-panel">
-            <h2 className="cat-title-header">{categories[activeCategory].title} FAQs</h2>
-            
             <div className="accordion-list">
               {categories[activeCategory].items.map((item) => {
                 const isOpen = expandedFaq === item.id;

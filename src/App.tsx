@@ -152,7 +152,7 @@ function App() {
             <h2 style={{ fontSize: '2.75rem', marginBottom: '1.5rem', color: '#0f172a', fontWeight: '800', letterSpacing: '-0.75px' }}>
               Blogs
             </h2>
-            <div style={{ height: '4px', width: '60px', backgroundColor: '#0284c7', margin: '0 auto 2.5rem auto' }}></div>
+            <div style={{ height: '4px', width: '60px', backgroundColor: '#018fff', margin: '0 auto 2.5rem auto' }}></div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '3rem', fontWeight: '500' }}>
               Coming Soon
             </p>

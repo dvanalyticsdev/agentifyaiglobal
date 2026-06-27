@@ -15,12 +15,12 @@ export const ServicesPage: React.FC = () => {
           
           <defs>
             <linearGradient id="blue-grad" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#0ea5e9" />
-              <stop offset="100%" stopColor="#0369a1" />
+              <stop offset="0%" stopColor="#018fff" />
+              <stop offset="100%" stopColor="#0066cc" />
             </linearGradient>
             <linearGradient id="blue-grad-bg" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#018fff" />
             </linearGradient>
           </defs>
         </svg>
@@ -41,12 +41,12 @@ export const ServicesPage: React.FC = () => {
           
           <defs>
             <linearGradient id="blue-grad-2" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#0ea5e9" />
-              <stop offset="100%" stopColor="#0369a1" />
+              <stop offset="0%" stopColor="#018fff" />
+              <stop offset="100%" stopColor="#0066cc" />
             </linearGradient>
             <linearGradient id="blue-grad-bg-2" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#018fff" />
             </linearGradient>
           </defs>
         </svg>
@@ -66,12 +66,12 @@ export const ServicesPage: React.FC = () => {
           
           <defs>
             <linearGradient id="blue-grad-3" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#0ea5e9" />
-              <stop offset="100%" stopColor="#0369a1" />
+              <stop offset="0%" stopColor="#018fff" />
+              <stop offset="100%" stopColor="#0066cc" />
             </linearGradient>
             <linearGradient id="blue-grad-bg-3" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#018fff" />
             </linearGradient>
           </defs>
         </svg>
@@ -95,12 +95,12 @@ export const ServicesPage: React.FC = () => {
           
           <defs>
             <linearGradient id="blue-grad-4" x1="12" y1="14" x2="52" y2="47" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#0ea5e9" />
-              <stop offset="100%" stopColor="#0369a1" />
+              <stop offset="0%" stopColor="#018fff" />
+              <stop offset="100%" stopColor="#0066cc" />
             </linearGradient>
             <linearGradient id="blue-grad-bg-4" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#018fff" />
             </linearGradient>
           </defs>
         </svg>
@@ -246,37 +246,37 @@ export const ServicesPage: React.FC = () => {
       layer: 'Operations Layer',
       tools: 'MLOps, LLMOps, AIOps',
       desc: 'Provides governance, monitoring, deployment automation, and lifecycle management for AI systems. These practices ensure model reliability, compliance, and performance optimization.',
-      color: '#db2777'
+      color: '#051f40'
     },
     {
       layer: 'Deployment Layer',
       tools: 'AWS, Azure, GCP, Docker, Kubernetes',
       desc: 'Cloud and container technologies that provide scalability, security, flexibility, and high availability for scalable enterprise-scale workloads.',
-      color: '#0d9488'
+      color: '#018fff'
     },
     {
       layer: 'Agentic AI Layer',
       tools: 'Multi-Agent Systems, AI Assistants, AI Copilots',
       desc: 'Introduces autonomous systems capable of decision-making, workflow execution, collaboration, and task completion.',
-      color: '#ea580c'
+      color: '#051f40'
     },
     {
       layer: 'AI Layer',
       tools: 'Python, Machine Learning, Deep Learning, NLP, Generative AI',
       desc: 'Enables predictive analytics, intelligent automation, recommendation systems, language understanding, and advanced AI-powered applications.',
-      color: '#4f46e5'
+      color: '#018fff'
     },
     {
       layer: 'Analytics Layer',
       tools: 'Excel + AI, Power BI, Tableau',
       desc: 'Transforms raw data into actionable insights through interactive dashboards, reports, and self-service visualizations.',
-      color: '#7c3aed'
+      color: '#051f40'
     },
     {
       layer: 'Data Layer',
       tools: 'SQL Server, PostgreSQL, MySQL, Snowflake, Databricks',
       desc: 'Robust data platforms that collect, store, process, and manage structured and unstructured data securely across environments.',
-      color: '#0284c7'
+      color: '#018fff'
     }
   ];
 
@@ -405,7 +405,7 @@ export const ServicesPage: React.FC = () => {
           <div className="section-header text-center">
             <span className="section-subtitle">Autonomous Decision Making</span>
             <h2 style={{ color: '#ffffff' }}>Agentic AI Solutions</h2>
-            <div className="title-underline center" style={{ backgroundColor: '#db2777' }}></div>
+            <div className="title-underline center" style={{ backgroundColor: '#018fff' }}></div>
             <p className="section-desc-para" style={{ color: '#cbd5e1' }}>
               Empower your workflows with goal-oriented, cooperative multi-agent teams that coordinate action and execute processes autonomously.
             </p>
