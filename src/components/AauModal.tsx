@@ -77,7 +77,6 @@ export const AauModal: React.FC<AauModalProps> = ({ isOpen, onClose, onSelectCou
                   <img src={course.poster} alt={course.title} className="aau-poster-img" />
                 </div>
                 <div className="aau-card-content">
-                  <h3 className="aau-card-title">{course.title}</h3>
                   <p className="aau-card-tagline">{course.tagline}</p>
                   <button className="aau-card-btn" onClick={() => onSelectCourse(course.id)}>
                     View Course Syllabus
