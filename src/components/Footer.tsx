@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                       </svg>
                     </div>
                   </div>
-                  <h3 className="center-company">Agentify AI Global</h3>
+                  <h3 className="center-company">AgentifyAI Global</h3>
                 </div>
 
                 {/* Column 2: Address */}
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
         {/* Footer Bottom copyright matching site layout */}
         <div className="footer-bottom-bar">
           <p className="footer-copyright-text">
-            Copyright © 2026 Agentify AI Global
+            Copyright © 2026 AgentifyAI Global
           </p>
         </div>
 

@@ -18,13 +18,6 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
     { id: 'course-apcs', label: 'Advanced Program in Cybersecurity & Forensics (APCF)' }
   ];
 
-  const navItems = [
-    { id: 'about', label: 'About Us' },
-    { id: 'services', label: 'Services' },
-    { id: 'blogs', label: 'Blogs' },
-    { id: 'faqs', label: 'FAQs' }
-  ];
-
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -66,7 +59,28 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
 
   const renderNavList = () => (
     <ul className="nav-list">
-      <li className="nav-item dropdown-container">
+      <li className="nav-item">
+        <a
+          href="#services"
+          className={activePage === 'services' ? 'active' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            if (onNavClick) onNavClick('services');
+          }}
+        >
+          Services
+        </a>
+      </li>
+
+      <li 
+        className="nav-item dropdown-container"
+        onMouseEnter={() => {
+          if (window.innerWidth > 768) {
+            setDropdownOpen(true);
+          }
+        }}
+      >
         <a
           href="#courses"
           className={`dropdown-trigger ${dropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
@@ -75,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
             setDropdownOpen(!dropdownOpen);
           }}
         >
-          All Courses
+          AI Academy Programs
           <svg className={`chevron-icon ${dropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -98,21 +112,47 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
         </div>
       </li>
 
-      {navItems.map((item) => (
-        <li key={item.id} className="nav-item">
-          <a
-            href={`#${item.id}`}
-            className={activePage === item.id ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              setMobileMenuOpen(false);
-              if (onNavClick) onNavClick(item.id);
-            }}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+      <li className="nav-item">
+        <a
+          href="#about"
+          className={activePage === 'about' ? 'active' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            if (onNavClick) onNavClick('about');
+          }}
+        >
+          Who We Are
+        </a>
+      </li>
+
+      <li className="nav-item">
+        <a
+          href="#blogs"
+          className={activePage === 'blogs' ? 'active' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            if (onNavClick) onNavClick('blogs');
+          }}
+        >
+          AI Journal
+        </a>
+      </li>
+
+      <li className="nav-item">
+        <a
+          href="#faqs"
+          className={activePage === 'faqs' ? 'active' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            if (onNavClick) onNavClick('faqs');
+          }}
+        >
+          FAQs
+        </a>
+      </li>
     </ul>
   );
 

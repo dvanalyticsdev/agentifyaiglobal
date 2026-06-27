@@ -86,10 +86,10 @@ const siteSections = [
   },
   {
     id: 'about',
-    title: 'About Agentify AI Global',
+    title: 'About AgentifyAI Global',
     keywords: ['about', 'vision', 'purpose', 'mission', 'team', 'leadership', 'founder'],
     summary:
-      'The About page describes Agentify AI Global as a mission-led organization focused on AI literacy, ethical autonomous intelligence, and inclusive innovation.',
+      'The About page describes AgentifyAI Global as a mission-led organization focused on AI literacy, ethical autonomous intelligence, and inclusive innovation.',
     highlights: [
       'Purpose: democratize the benefits of data and AI',
       'Vision: make people AI-literate and capable of using ethical autonomous systems',

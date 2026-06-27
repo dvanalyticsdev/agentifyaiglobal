@@ -9,7 +9,7 @@ export const AboutPage: React.FC = () => {
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content container">
           <span className="about-subtitle">Behind the Vision</span>
-          <h1 className="about-title">About Agentify AI Global</h1>
+          <h1 className="about-title">About AgentifyAI Global</h1>
           <div className="about-title-underline"></div>
           <p className="about-lead">
             We envision a world where everyone is AI-literate and empowered to use ethical, 

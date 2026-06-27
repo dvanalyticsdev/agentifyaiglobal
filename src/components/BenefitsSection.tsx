@@ -34,14 +34,12 @@ export const BenefitsSection: React.FC = () => {
             className={`tab-btn ${activeTab === 'program' ? 'active' : ''}`}
             onClick={() => setActiveTab('program')}
           >
-            <span className="tab-btn-icon">📋</span>
             Core Program Benefits
           </button>
           <button 
             className={`tab-btn ${activeTab === 'lms' ? 'active' : ''}`}
             onClick={() => setActiveTab('lms')}
           >
-            <span className="tab-btn-icon">💻</span>
             LMS Platform Benefits
           </button>
         </div>

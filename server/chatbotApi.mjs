@@ -201,7 +201,7 @@ function buildSuggestions(context) {
 
   if (context.page === 'about') {
     return [
-      'What is Agentify AI Global about?',
+      'What is AgentifyAI Global about?',
       'What are the mission pillars?',
       'Who leads the organization?',
     ];
