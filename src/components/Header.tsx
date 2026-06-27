@@ -9,6 +9,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const coursesList = [
     { id: 'course-apids', label: 'Advanced Program in Industrial Data Science & AI (APIDS)' },
@@ -35,6 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
       }
       if (!target.closest('.services-dropdown-container')) {
         setServicesDropdownOpen(false);
+        setMobileServicesOpen(false);
       }
     };
 
@@ -48,6 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
     setMobileMenuOpen(false);
     setCoursesDropdownOpen(false);
     setServicesDropdownOpen(false);
+    setMobileServicesOpen(false);
   }, [activePage]);
 
   useEffect(() => {
@@ -234,42 +237,163 @@ export const Header: React.FC<HeaderProps> = ({ onNavClick, activePage = 'home' 
         </div>
 
         <div className="mobile-header-stack">
-          <div className="header-brand-row">
-            <a href="/" className="logo-link" onClick={(e) => {
-              e.preventDefault();
-              setMobileMenuOpen(false);
-              if (onNavClick) onNavClick('home');
-            }}>
-              <img src="/logo.png" alt="Agentify AI Logo" className="logo-image" />
-            </a>
-          </div>
-
-          <div className="header-top-row">
+          <div className="mobile-header-row">
+            {/* 1. Left: Hamburger menu */}
             <button
               type="button"
               className="nav-toggle-btn"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-
-            <button
-              className="btn-enroll-header btn-enroll-desktop"
               onClick={() => {
-                setMobileMenuOpen(false);
-                if (onNavClick) onNavClick('enroll');
+                setMobileMenuOpen((prev) => !prev);
+                setMobileServicesOpen(false); // Close services when opening menu
               }}
             >
-              Enroll Now
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
+
+            {/* 2. Center: Logo */}
+            <a href="/" className="logo-link mobile-logo-link" onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              setMobileServicesOpen(false);
+              if (onNavClick) onNavClick('home');
+            }}>
+              <img src="/logo.png" alt="Agentify AI Logo" className="logo-image mobile-logo-image" />
+            </a>
+
+            {/* 3. Right: Services Dropdown */}
+            <div className="mobile-services-container services-dropdown-container">
+              <a
+                href="#services"
+                className={`dropdown-trigger ${mobileServicesOpen ? 'open' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileServicesOpen(!mobileServicesOpen);
+                  setMobileMenuOpen(false); // Close menu drawer when opening services
+                }}
+              >
+                Services
+                <svg className={`chevron-icon ${mobileServicesOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+
+              <div className={`services-dropdown-menu mobile-services-dropdown ${mobileServicesOpen ? 'show' : ''}`}>
+                {servicesList.map((service) => (
+                  <a
+                    key={service.id}
+                    href={`#${service.id}`}
+                    className="dropdown-item-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileServicesOpen(false);
+                      handleServiceClick(service.id);
+                    }}
+                  >
+                    {service.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
+          {/* Drawer Menu Panel */}
           <nav className={`nav-panel mobile-nav-panel ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            {renderNavList()}
+            <ul className="nav-list">
+              <li 
+                className="nav-item dropdown-container courses-dropdown-container"
+                onClick={() => {
+                  setCoursesDropdownOpen(!coursesDropdownOpen);
+                }}
+              >
+                <a
+                  href="#courses"
+                  className={`dropdown-trigger ${coursesDropdownOpen ? 'open' : ''} ${activePage.startsWith('course-') ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  AI Academy Programs
+                  <svg className={`chevron-icon ${coursesDropdownOpen ? 'rotated' : ''}`} viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+
+                <div className={`courses-dropdown-menu ${coursesDropdownOpen ? 'show' : ''}`}>
+                  {coursesList.map((course) => (
+                    <a
+                      key={course.id}
+                      href={`#${course.id}`}
+                      className="dropdown-item-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleCourseClick(course.id);
+                      }}
+                    >
+                      {course.label}
+                    </a>
+                  ))}
+                </div>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  href="#about"
+                  className={activePage === 'about' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    if (onNavClick) onNavClick('about');
+                  }}
+                >
+                  Who We Are
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  href="#blogs"
+                  className={activePage === 'blogs' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    if (onNavClick) onNavClick('blogs');
+                  }}
+                >
+                  AI Journal
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  href="#faqs"
+                  className={activePage === 'faqs' ? 'active' : ''}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    if (onNavClick) onNavClick('faqs');
+                  }}
+                >
+                  FAQs
+                </a>
+              </li>
+
+              {/* Enroll Now inside mobile menu only */}
+              <li className="nav-item mobile-enroll-nav-item">
+                <button
+                  className="btn-enroll-header mobile-enroll-btn"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (onNavClick) onNavClick('enroll');
+                  }}
+                >
+                  Enroll Now
+                </button>
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
