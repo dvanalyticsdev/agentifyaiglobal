@@ -675,7 +675,7 @@ a {
 }
 
 .hero-heading-become {
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 500;
   letter-spacing: 1.5px;
   color: #051f40; /* Company brand dark navy */
@@ -989,13 +989,17 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-    padding-top: 0;
+    padding: 2.25rem 1.5rem;
+    background-color: #051f40;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(5, 31, 64, 0.15);
   }
 
   .hero-heading-become {
-    font-size: 0.8rem;
+    font-size: 1.6rem;
     letter-spacing: 0.08em;
     margin-bottom: 0;
+    color: #ffffff;
   }
 
   .hero-heading-pro {
@@ -1003,6 +1007,7 @@ a {
     letter-spacing: -0.04em;
     line-height: 1.02;
     margin-bottom: 0;
+    color: #ffffff;
   }
 
   .hero-heading-accent {
@@ -1010,12 +1015,14 @@ a {
     letter-spacing: -0.04em;
     line-height: 1.06;
     margin-bottom: 0.4rem;
+    color: #ffffff;
   }
 
   .hero-desc {
     font-size: var(--font-size-lead);
     line-height: 1.45;
     margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .hero-image-container {
