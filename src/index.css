@@ -1,6 +1,6 @@
 /* Global CSS - Agentify AI Website */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   /* Colors */
@@ -17,6 +17,7 @@
   
   /* Fonts */
   --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Inter', var(--font-family);
   
   /* Typography Scale */
   --font-size-display: 3.5rem;
@@ -693,10 +694,11 @@ a {
 }
 
 .hero-heading-accent {
-  font-size: 2.75rem;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.05;
+  font-family: var(--font-family-heading);
+  font-size: 4.25rem;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
   color: #051f40; /* Company brand dark navy */
   margin-bottom: 1.5rem;
 }
@@ -903,7 +905,9 @@ a {
   }
   
   .hero-heading-accent {
-    font-size: 2.2rem;
+    font-size: 3.25rem;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
   }
   
   .hero-image-container {
@@ -1011,9 +1015,11 @@ a {
   }
 
   .hero-heading-accent {
-    font-size: 1.65rem;
+    font-family: var(--font-family-heading);
+    font-size: 2.25rem;
+    font-weight: 900;
     letter-spacing: -0.04em;
-    line-height: 1.06;
+    line-height: 1.02;
     margin-bottom: 0.4rem;
     color: #ffffff;
   }
